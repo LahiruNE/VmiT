@@ -1,0 +1,2099 @@
+2017/09/07 21:17:46 [error] [exception.CHttpException.404] CHttpException: The requested view "home2" was not found. in /var/www/html/VmiT/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('home2')
+#1 /var/www/html/VmiT/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/html/VmiT/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/VmiT/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/VmiT/index.php?r=site/page&view=home2
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/page&view=columns
+---
+2017/09/07 21:21:13 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "student/index". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('student/index')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=student/index
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/index
+---
+2017/09/07 21:21:19 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "user/index". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('user/index')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=user/index
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/index
+---
+2017/09/07 21:24:55 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "home". in /var/www/html/VmiT/framework/web/CController.php:486
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CController.php(270): CController->missingAction('home')
+#1 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('home')
+#2 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/home')
+#3 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/VmiT/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/VmiT/index.php?r=site/home
+---
+2017/09/07 21:46:05 [error] [php] Declaration of BActiveForm::labelEx(CModel $model, $attribute, $htmlOptions = Array) should be compatible with CActiveForm::labelEx($model, $attribute, $htmlOptions = Array) (/var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php:38)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/YiiBase.php(303): class_exists()
+#2 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): import()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(198): SiteController->createWidget()
+#5 /var/www/html/VmiT/themes/bootstrap/views/site/contact.php(25): SiteController->beginWidget()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(872): SiteController->renderFile()
+#9 /var/www/html/VmiT/framework/web/CController.php(785): SiteController->renderPartial()
+#10 /var/www/html/VmiT/protected/controllers/SiteController.php(72): SiteController->render()
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=site/contact
+in /var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php (38)
+in /var/www/html/VmiT/themes/bootstrap/views/site/contact.php (25)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (72)
+2017/09/07 21:46:24 [error] [php] Declaration of BActiveForm::labelEx(CModel $model, $attribute, $htmlOptions = Array) should be compatible with CActiveForm::labelEx($model, $attribute, $htmlOptions = Array) (/var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php:38)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/YiiBase.php(303): class_exists()
+#2 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): import()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(198): SiteController->createWidget()
+#5 /var/www/html/VmiT/themes/bootstrap/views/site/login.php(14): SiteController->beginWidget()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(872): SiteController->renderFile()
+#9 /var/www/html/VmiT/framework/web/CController.php(785): SiteController->renderPartial()
+#10 /var/www/html/VmiT/protected/controllers/SiteController.php(98): SiteController->render()
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=site/login
+in /var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php (38)
+in /var/www/html/VmiT/themes/bootstrap/views/site/login.php (14)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (98)
+2017/09/07 21:46:30 [error] [php] Declaration of BActiveForm::labelEx(CModel $model, $attribute, $htmlOptions = Array) should be compatible with CActiveForm::labelEx($model, $attribute, $htmlOptions = Array) (/var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php:38)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/YiiBase.php(303): class_exists()
+#2 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): import()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(198): SiteController->createWidget()
+#5 /var/www/html/VmiT/themes/bootstrap/views/site/contact.php(25): SiteController->beginWidget()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(872): SiteController->renderFile()
+#9 /var/www/html/VmiT/framework/web/CController.php(785): SiteController->renderPartial()
+#10 /var/www/html/VmiT/protected/controllers/SiteController.php(72): SiteController->render()
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=site/contact
+in /var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php (38)
+in /var/www/html/VmiT/themes/bootstrap/views/site/contact.php (25)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (72)
+2017/09/07 21:46:33 [error] [php] Declaration of BActiveForm::labelEx(CModel $model, $attribute, $htmlOptions = Array) should be compatible with CActiveForm::labelEx($model, $attribute, $htmlOptions = Array) (/var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php:38)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/YiiBase.php(303): class_exists()
+#2 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): import()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(198): SiteController->createWidget()
+#5 /var/www/html/VmiT/themes/bootstrap/views/site/login.php(14): SiteController->beginWidget()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(872): SiteController->renderFile()
+#9 /var/www/html/VmiT/framework/web/CController.php(785): SiteController->renderPartial()
+#10 /var/www/html/VmiT/protected/controllers/SiteController.php(98): SiteController->render()
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=site/login
+in /var/www/html/VmiT/protected/extensions/bootstrap-theme/widgets/BActiveForm.php (38)
+in /var/www/html/VmiT/themes/bootstrap/views/site/login.php (14)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (98)
+2017/09/07 21:47:22 [error] [php] include(BController.php): failed to open stream: No such file or directory (/var/www/html/VmiT/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/VmiT/protected/components/Controller.php(25): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/web/CWebApplication.php(281): SiteController->init()
+#2 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#3 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?
+in /var/www/html/VmiT/protected/components/Controller.php (25)
+in /var/www/html/VmiT/index.php (13)
+2017/09/07 21:47:26 [error] [php] include(BController.php): failed to open stream: No such file or directory (/var/www/html/VmiT/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/VmiT/protected/components/Controller.php(25): spl_autoload_call()
+#1 /var/www/html/VmiT/framework/web/CWebApplication.php(281): SiteController->init()
+#2 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#3 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php
+in /var/www/html/VmiT/protected/components/Controller.php (25)
+in /var/www/html/VmiT/index.php (13)
+2017/09/07 21:47:45 [error] [exception.CException] CException: Property "SiteController.pageCaption" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/themes/bootstrap/views/site/index.php(2): CComponent->__set('pageCaption', '')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, true)
+#3 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', NULL, true)
+#4 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('index', NULL, true)
+#5 /var/www/html/VmiT/protected/controllers/SiteController.php(32): CController->render('index')
+#6 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/VmiT/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/VmiT/index.php
+---
+2017/09/07 21:47:46 [error] [exception.CException] CException: Property "SiteController.pageCaption" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/themes/bootstrap/views/site/index.php(2): CComponent->__set('pageCaption', '')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, true)
+#3 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', NULL, true)
+#4 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('index', NULL, true)
+#5 /var/www/html/VmiT/protected/controllers/SiteController.php(32): CController->render('index')
+#6 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/VmiT/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/VmiT/index.php
+---
+2017/09/07 21:47:55 [error] [exception.CException] CException: Property "SiteController.pageCaption" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/themes/bootstrap/views/site/index.php(2): CComponent->__set('pageCaption', '')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, true)
+#3 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', NULL, true)
+#4 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('index', NULL, true)
+#5 /var/www/html/VmiT/protected/controllers/SiteController.php(32): CController->render('index')
+#6 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#12 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/VmiT/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/VmiT/
+---
+2017/09/08 14:47:47 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "student/index". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('student/index')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=student/index
+HTTP_REFERER=http://localhost/VmiT/
+---
+2017/09/08 14:47:52 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "payment/index". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('payment/index')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=payment/index
+HTTP_REFERER=http://localhost/VmiT/
+---
+2017/09/08 15:02:10 [error] [exception.CHttpException.404] CHttpException: The requested view "Demo 404 page" was not found. in /var/www/html/VmiT/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('Demo 404 page')
+#1 /var/www/html/VmiT/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/html/VmiT/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/VmiT/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/VmiT/index.php?r=site/page&view=Demo+404+page
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/page&view=buttons_and_icons
+---
+2017/09/08 15:02:14 [error] [exception.CHttpException.404] CHttpException: The requested view "Demo 404 page" was not found. in /var/www/html/VmiT/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('Demo 404 page')
+#1 /var/www/html/VmiT/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/html/VmiT/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/VmiT/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/VmiT/index.php?r=site/page&view=Demo+404+page
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/page&view=buttons_and_icons
+---
+2017/09/08 15:02:39 [error] [exception.CHttpException.404] CHttpException: The requested view "graphs" was not found. in /var/www/html/VmiT/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('graphs')
+#1 /var/www/html/VmiT/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/html/VmiT/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/VmiT/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/VmiT/index.php?r=site/page&view=graphs
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/index
+---
+2017/09/08 15:02:56 [error] [exception.CHttpException.404] CHttpException: The requested view "graphs" was not found. in /var/www/html/VmiT/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('graphs')
+#1 /var/www/html/VmiT/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /var/www/html/VmiT/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/VmiT/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/VmiT/index.php?r=site/page&view=graphs
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/index
+---
+2017/09/08 18:09:44 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in /var/www/html/VmiT/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/html/VmiT/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/html/VmiT/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/html/VmiT/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/html/VmiT/framework/gii/generators/model/ModelCode.php(60): CModule->__get('db')
+#5 /var/www/html/VmiT/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/html/VmiT/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/html/VmiT/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=gii/model/index
+HTTP_REFERER=http://localhost/VmiT/index.php?r=gii/default/index
+---
+2017/09/08 23:30:33 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "product/new". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('product/new')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=product/new&tag=new
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/contact
+---
+2017/09/09 00:55:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "routes". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('routes')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=routes
+HTTP_REFERER=http://localhost/VmiT/index.php?r=employee
+---
+2017/09/09 00:55:59 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "routes". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('routes')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=routes
+HTTP_REFERER=http://localhost/VmiT/index.php?r=employee
+---
+2017/09/09 00:57:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/VmiT/themes/blackboot/views/layouts/main.php:157
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('      <div clas...')
+#3 /var/www/html/VmiT/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('      <div clas...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(215): COutputProcessor->run()
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(309): CBaseController->endWidget('CContentDecorat...')
+#6 /var/www/html/VmiT/themes/blackboot/views/layouts/column2.php(22): CBaseController->endContent()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(787): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/protected/controllers/EmployeeController.php(127): CController->render('index', Array)
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): EmployeeController->actionIndex()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('')
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('employee')
+#22 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/VmiT/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/VmiT/index.php?r=employee
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/contact
+---
+2017/09/09 12:33:12 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "userrole/admin". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('userrole/admin')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=userrole/admin
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 12:33:20 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "userrole". in /var/www/html/VmiT/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('userrole')
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/VmiT/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/VmiT/index.php?r=userrole
+---
+2017/09/09 12:41:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/html/VmiT/protected/controllers/ProjectController.php (73)
+in /var/www/html/VmiT/index.php (13)
+2017/09/09 12:41:48 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3) in /var/www/html/VmiT/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/VmiT/protected/controllers/ProjectController.php(73): CActiveRecord->save()
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionCreate()
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/create')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=project/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=project/create
+---
+2017/09/09 12:44:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/html/VmiT/protected/controllers/ProjectController.php (73)
+in /var/www/html/VmiT/index.php (13)
+2017/09/09 12:44:08 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3) in /var/www/html/VmiT/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/VmiT/protected/controllers/ProjectController.php(73): CActiveRecord->save()
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionCreate()
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/create')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=project/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=project/create
+---
+2017/09/09 13:03:16 [error] [exception.ParseError] ParseError: syntax error, unexpected '<', expecting end of file in /var/www/html/VmiT/protected/views/project/admin.php:29
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('admin', Array, true)
+#3 /var/www/html/VmiT/protected/controllers/ProjectController.php(142): CController->render('admin', Array)
+#4 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionAdmin()
+#5 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#14 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/admin')
+#15 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#16 /var/www/html/VmiT/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/VmiT/index.php?r=project/admin
+---
+2017/09/09 13:03:17 [error] [exception.ParseError] ParseError: syntax error, unexpected '<', expecting end of file in /var/www/html/VmiT/protected/views/project/admin.php:29
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('admin', Array, true)
+#3 /var/www/html/VmiT/protected/controllers/ProjectController.php(142): CController->render('admin', Array)
+#4 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionAdmin()
+#5 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#14 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/admin')
+#15 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#16 /var/www/html/VmiT/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/VmiT/index.php?r=project/admin
+---
+2017/09/09 14:05:14 [error] [exception.CException] CException: Alias "ext.select2.ESelect2" is invalid. Make sure it points to an existing PHP file and the file is readable. in /var/www/html/VmiT/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.select2.ESe...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(ProjectController), 'ext.select2.ESe...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('ext.select2.ESe...', Array)
+#3 /var/www/html/VmiT/protected/views/project/_search.php(35): CBaseController->widget('ext.select2.ESe...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/project/admin.php(49): CController->renderPartial('_search', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('admin', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/ProjectController.php(142): CController->render('admin', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionAdmin()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/admin')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=project/admin
+HTTP_REFERER=http://localhost/VmiT/index.php?r=project/admin
+---
+2017/09/09 16:57:59 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 16:58:03 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 16:59:01 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 16:59:02 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 16:59:02 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 16:59:02 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:13 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:13 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:13 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:13 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:14 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:00:14 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(25): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:10:29 [error] [exception.CException] CException: Property "Time.dob" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('dob')
+#1 /var/www/html/VmiT/protected/views/time/_form.php(36): CActiveRecord->__get('dob')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#4 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#5 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#8 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#10 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#22 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/VmiT/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:11:40 [error] [exception.ParseError] ParseError: syntax error, unexpected ''changeYear'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /var/www/html/VmiT/protected/views/time/_form.php:36
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#5 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#7 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#8 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#9 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#18 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#19 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/VmiT/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:28:05 [error] [exception.CException] CException: Alias "ext.YiiDateTimePicker.jqueryDateTime" is invalid. Make sure it points to an existing PHP file and the file is readable. in /var/www/html/VmiT/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.YiiDateTime...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'ext.YiiDateTime...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('ext.YiiDateTime...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('ext.YiiDateTime...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:28:07 [error] [exception.CException] CException: Alias "ext.YiiDateTimePicker.jqueryDateTime" is invalid. Make sure it points to an existing PHP file and the file is readable. in /var/www/html/VmiT/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.YiiDateTime...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'ext.YiiDateTime...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('ext.YiiDateTime...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('ext.YiiDateTime...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:28:07 [error] [exception.CException] CException: Alias "ext.YiiDateTimePicker.jqueryDateTime" is invalid. Make sure it points to an existing PHP file and the file is readable. in /var/www/html/VmiT/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.YiiDateTime...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'ext.YiiDateTime...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('ext.YiiDateTime...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('ext.YiiDateTime...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:29:05 [error] [php] Undefined variable: news (/var/www/html/VmiT/protected/views/time/_form.php:23)
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CController.php(872): TimeController->renderFile()
+#1 /var/www/html/VmiT/protected/views/time/create.php(18): TimeController->renderPartial()
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): TimeController->renderInternal()
+#4 /var/www/html/VmiT/framework/web/CController.php(872): TimeController->renderFile()
+#5 /var/www/html/VmiT/framework/web/CController.php(785): TimeController->renderPartial()
+#6 /var/www/html/VmiT/protected/controllers/TimeController.php(78): TimeController->render()
+#7 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#8 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): TimeController->runAction()
+#10 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(1148): CAccessControlFilter->filter()
+#12 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): TimeController->filterAccessControl()
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(265): TimeController->runActionWithFilters()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(282): TimeController->run()
+#17 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#19 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=time/create
+in /var/www/html/VmiT/protected/views/time/_form.php (23)
+in /var/www/html/VmiT/protected/views/time/create.php (18)
+in /var/www/html/VmiT/protected/controllers/TimeController.php (78)
+2017/09/09 17:29:06 [error] [php] Undefined variable: news (/var/www/html/VmiT/protected/views/time/_form.php:23)
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CController.php(872): TimeController->renderFile()
+#1 /var/www/html/VmiT/protected/views/time/create.php(18): TimeController->renderPartial()
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): TimeController->renderInternal()
+#4 /var/www/html/VmiT/framework/web/CController.php(872): TimeController->renderFile()
+#5 /var/www/html/VmiT/framework/web/CController.php(785): TimeController->renderPartial()
+#6 /var/www/html/VmiT/protected/controllers/TimeController.php(78): TimeController->render()
+#7 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#8 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): TimeController->runAction()
+#10 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(1148): CAccessControlFilter->filter()
+#12 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): TimeController->filterAccessControl()
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(265): TimeController->runActionWithFilters()
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(282): TimeController->run()
+#17 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#19 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php?r=time/create
+in /var/www/html/VmiT/protected/views/time/_form.php (23)
+in /var/www/html/VmiT/protected/views/time/create.php (18)
+in /var/www/html/VmiT/protected/controllers/TimeController.php (78)
+2017/09/09 17:31:10 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /var/www/html/VmiT/protected/controllers/TimeController.php:157
+Stack trace:
+#0 /var/www/html/VmiT/protected/controllers/TimeController.php(55): TimeController->loadModel('1')
+#1 [internal function]: TimeController->actionView('1')
+#2 /var/www/html/VmiT/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(TimeController), Array)
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TimeController), Object(ReflectionMethod), Array)
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/view')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=time/view&id=1
+---
+2017/09/09 17:31:13 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /var/www/html/VmiT/protected/controllers/TimeController.php:157
+Stack trace:
+#0 /var/www/html/VmiT/protected/controllers/TimeController.php(55): TimeController->loadModel('1')
+#1 [internal function]: TimeController->actionView('1')
+#2 /var/www/html/VmiT/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(TimeController), Array)
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TimeController), Object(ReflectionMethod), Array)
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/view')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=time/view&id=1
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/create
+---
+2017/09/09 17:31:13 [error] [exception.CException] CException: CJuiDateTimePicker must specify "model" and "attribute" or "name" property values. in /var/www/html/VmiT/framework/zii/widgets/jui/CJuiInputWidget.php:59
+Stack trace:
+#0 /var/www/html/VmiT/protected/extensions/CJuiDateTimePicker/CJuiDateTimePicker.php(26): CJuiInputWidget->resolveNameID()
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(182): CJuiDateTimePicker->run()
+#2 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('CJuiDateTimePic...', Array)
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#5 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#11 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#12 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#13 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#20 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#23 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#24 /var/www/html/VmiT/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+---
+2017/09/09 17:31:14 [error] [exception.CException] CException: CJuiDateTimePicker must specify "model" and "attribute" or "name" property values. in /var/www/html/VmiT/framework/zii/widgets/jui/CJuiInputWidget.php:59
+Stack trace:
+#0 /var/www/html/VmiT/protected/extensions/CJuiDateTimePicker/CJuiDateTimePicker.php(26): CJuiInputWidget->resolveNameID()
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(182): CJuiDateTimePicker->run()
+#2 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('CJuiDateTimePic...', Array)
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#5 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#11 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#12 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#13 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#20 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#23 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#24 /var/www/html/VmiT/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:59:26 [error] [exception.ParseError] ParseError: syntax error, unexpected '?>' in /var/www/html/VmiT/themes/blackboot/views/layouts/main.php:26
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('      <div clas...')
+#3 /var/www/html/VmiT/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('      <div clas...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(215): COutputProcessor->run()
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(309): CBaseController->endWidget('CContentDecorat...')
+#6 /var/www/html/VmiT/themes/blackboot/views/layouts/column2.php(22): CBaseController->endContent()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(787): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#22 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/VmiT/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 17:59:27 [error] [exception.ParseError] ParseError: syntax error, unexpected '?>' in /var/www/html/VmiT/themes/blackboot/views/layouts/main.php:26
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#1 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#2 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('      <div clas...')
+#3 /var/www/html/VmiT/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('      <div clas...')
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(215): COutputProcessor->run()
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(309): CBaseController->endWidget('CContentDecorat...')
+#6 /var/www/html/VmiT/themes/blackboot/views/layouts/column2.php(22): CBaseController->endContent()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#9 /var/www/html/VmiT/framework/web/CController.php(787): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#11 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#12 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#16 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#21 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#22 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/VmiT/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:13:41 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(33): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:14:51 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:14:52 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:13 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:14 [error] [exception.CException] CException: Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file. in /var/www/html/VmiT/framework/YiiBase.php:348
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'widgets.timepic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('widgets.timepic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('widgets.timepic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:48 [error] [exception.CException] CException: Property "Time.publicated" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('publicated')
+#1 /var/www/html/VmiT/protected/extensions/timepicker/views/default.php(1): CActiveRecord->__get('publicated')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(130): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, false)
+#4 /var/www/html/VmiT/framework/web/widgets/CWidget.php(244): CBaseController->renderFile('/var/www/html/V...', NULL, false)
+#5 /var/www/html/VmiT/protected/extensions/timepicker/timepicker.php(60): CWidget->render('default')
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(182): timepicker->run()
+#7 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#12 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#13 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#14 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#15 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#16 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#17 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#18 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#27 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#28 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#29 /var/www/html/VmiT/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:48 [error] [exception.CException] CException: Property "Time.publicated" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('publicated')
+#1 /var/www/html/VmiT/protected/extensions/timepicker/views/default.php(1): CActiveRecord->__get('publicated')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(130): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, false)
+#4 /var/www/html/VmiT/framework/web/widgets/CWidget.php(244): CBaseController->renderFile('/var/www/html/V...', NULL, false)
+#5 /var/www/html/VmiT/protected/extensions/timepicker/timepicker.php(60): CWidget->render('default')
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(182): timepicker->run()
+#7 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#12 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#13 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#14 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#15 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#16 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#17 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#18 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#27 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#28 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#29 /var/www/html/VmiT/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:49 [error] [exception.CException] CException: Property "Time.publicated" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('publicated')
+#1 /var/www/html/VmiT/protected/extensions/timepicker/views/default.php(1): CActiveRecord->__get('publicated')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(130): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, false)
+#4 /var/www/html/VmiT/framework/web/widgets/CWidget.php(244): CBaseController->renderFile('/var/www/html/V...', NULL, false)
+#5 /var/www/html/VmiT/protected/extensions/timepicker/timepicker.php(60): CWidget->render('default')
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(182): timepicker->run()
+#7 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#12 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#13 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#14 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#15 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#16 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#17 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#18 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#27 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#28 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#29 /var/www/html/VmiT/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:49 [error] [exception.CException] CException: Property "Time.publicated" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('publicated')
+#1 /var/www/html/VmiT/protected/extensions/timepicker/views/default.php(1): CActiveRecord->__get('publicated')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(130): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, false)
+#4 /var/www/html/VmiT/framework/web/widgets/CWidget.php(244): CBaseController->renderFile('/var/www/html/V...', NULL, false)
+#5 /var/www/html/VmiT/protected/extensions/timepicker/timepicker.php(60): CWidget->render('default')
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(182): timepicker->run()
+#7 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#12 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#13 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#14 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#15 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#16 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#17 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#18 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#27 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#28 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#29 /var/www/html/VmiT/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:15:49 [error] [exception.CException] CException: Property "Time.publicated" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('publicated')
+#1 /var/www/html/VmiT/protected/extensions/timepicker/views/default.php(1): CActiveRecord->__get('publicated')
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(130): require('/var/www/html/V...')
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', NULL, false)
+#4 /var/www/html/VmiT/framework/web/widgets/CWidget.php(244): CBaseController->renderFile('/var/www/html/V...', NULL, false)
+#5 /var/www/html/VmiT/protected/extensions/timepicker/timepicker.php(60): CWidget->render('default')
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(182): timepicker->run()
+#7 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#12 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#13 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#14 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#15 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#16 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#17 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#18 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#22 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#25 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#27 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#28 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#29 /var/www/html/VmiT/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:16:05 [error] [exception.CException] CException: Property "timepicker.attribute" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(161): CComponent->__set('attribute', 'Time')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'timepicker', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('timepicker', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:16:06 [error] [exception.CException] CException: Property "timepicker.attribute" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(161): CComponent->__set('attribute', 'Time')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'timepicker', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('timepicker', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:16:06 [error] [exception.CException] CException: Property "timepicker.attribute" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(161): CComponent->__set('attribute', 'Time')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'timepicker', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('timepicker', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:16:06 [error] [exception.CException] CException: Property "timepicker.attribute" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(161): CComponent->__set('attribute', 'Time')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'timepicker', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('timepicker', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(34): CBaseController->widget('timepicker', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:51:55 [error] [exception.CException] CException: Property "CJuiDateTimePicker.hourMax" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/CWidgetFactory.php(161): CComponent->__set('hourMax', '24')
+#1 /var/www/html/VmiT/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(TimeController), 'CJuiDateTimePic...', Array)
+#2 /var/www/html/VmiT/framework/web/CBaseController.php(181): CBaseController->createWidget('CJuiDateTimePic...', Array)
+#3 /var/www/html/VmiT/protected/views/time/_form.php(23): CBaseController->widget('CJuiDateTimePic...', Array)
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#5 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#6 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#7 /var/www/html/VmiT/protected/views/time/create.php(18): CController->renderPartial('_form', Array)
+#8 /var/www/html/VmiT/framework/web/CBaseController.php(126): require('/var/www/html/V...')
+#9 /var/www/html/VmiT/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/V...', Array, true)
+#10 /var/www/html/VmiT/framework/web/CController.php(872): CBaseController->renderFile('/var/www/html/V...', Array, true)
+#11 /var/www/html/VmiT/framework/web/CController.php(785): CController->renderPartial('create', Array, true)
+#12 /var/www/html/VmiT/protected/controllers/TimeController.php(78): CController->render('create', Array)
+#13 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#14 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#24 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/VmiT/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/admin
+---
+2017/09/09 18:57:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '3333333333' for column 'Time' at row 1. The SQL statement executed was: INSERT INTO `time` (`Time`) VALUES (:yp0).
+in /var/www/html/VmiT/protected/controllers/TimeController.php (73)
+in /var/www/html/VmiT/index.php (13)
+2017/09/09 18:57:01 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '3333333333' for column 'Time' at row 1. The SQL statement executed was: INSERT INTO `time` (`Time`) VALUES (:yp0) in /var/www/html/VmiT/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/VmiT/protected/controllers/TimeController.php(73): CActiveRecord->save()
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/create
+---
+2017/09/09 19:01:58 [error] [exception.CException] CException: Property "Time.password" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('password')
+#1 /var/www/html/VmiT/framework/validators/CRegularExpressionValidator.php(46): CActiveRecord->__get('password')
+#2 /var/www/html/VmiT/framework/validators/CValidator.php(201): CRegularExpressionValidator->validateAttribute(Object(Time), 'password')
+#3 /var/www/html/VmiT/framework/base/CModel.php(159): CValidator->validate(Object(Time), Array)
+#4 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(810): CModel->validate(NULL)
+#5 /var/www/html/VmiT/protected/controllers/TimeController.php(73): CActiveRecord->save()
+#6 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): TimeController->actionCreate()
+#7 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#11 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('time/create')
+#17 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/VmiT/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/VmiT/index.php?r=time/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=time/create
+---
+2017/09/09 19:59:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '23423412412412' for column 'Start_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/html/VmiT/protected/controllers/ProjectController.php (73)
+in /var/www/html/VmiT/index.php (13)
+2017/09/09 19:59:11 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '23423412412412' for column 'Start_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Start_Date`, `End_Date`, `Status`) VALUES (:yp0, :yp1, :yp2, :yp3) in /var/www/html/VmiT/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/VmiT/protected/controllers/ProjectController.php(73): CActiveRecord->save()
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionCreate()
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/create')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=project/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=project/create
+---
+2017/09/09 21:37:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Status`, `Start_Date`, `End_Date`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/html/VmiT/protected/controllers/ProjectController.php (73)
+in /var/www/html/VmiT/index.php (13)
+2017/09/09 21:37:02 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'End_Date' at row 1. The SQL statement executed was: INSERT INTO `project` (`Project_Name`, `Status`, `Start_Date`, `End_Date`) VALUES (:yp0, :yp1, :yp2, :yp3) in /var/www/html/VmiT/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/VmiT/protected/controllers/ProjectController.php(73): CActiveRecord->save()
+#3 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): ProjectController->actionCreate()
+#4 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/html/VmiT/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/create')
+#14 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/VmiT/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/VmiT/index.php?r=project/create
+HTTP_REFERER=http://localhost/VmiT/index.php?r=project/create
+---
+2017/09/10 22:05:00 [error] [exception.CException] CException: Property "User.password" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('password')
+#1 /var/www/html/VmiT/protected/components/UserIdentity.php(25): CActiveRecord->__get('password')
+#2 /var/www/html/VmiT/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#3 /var/www/html/VmiT/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/html/VmiT/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/html/VmiT/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#6 /var/www/html/VmiT/protected/controllers/SiteController.php(94): CModel->validate()
+#7 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /var/www/html/VmiT/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/VmiT/index.php?r=site/login
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/login
+---
+2017/09/10 22:06:48 [error] [exception.CException] CException: Property "UserIdentity.User_ID" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/VmiT/protected/components/UserIdentity.php(29): CComponent->__set('User_ID', '1')
+#1 /var/www/html/VmiT/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#2 /var/www/html/VmiT/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/html/VmiT/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/html/VmiT/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#5 /var/www/html/VmiT/protected/controllers/SiteController.php(94): CModel->validate()
+#6 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/VmiT/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/VmiT/index.php?r=site/login
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/login
+---
+2017/09/10 22:08:28 [error] [exception.CException] CException: Property "User.Role_ID" is not defined. in /var/www/html/VmiT/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/VmiT/framework/db/ar/CActiveRecord.php(145): CComponent->__get('Role_ID')
+#1 /var/www/html/VmiT/protected/components/UserIdentity.php(31): CActiveRecord->__get('Role_ID')
+#2 /var/www/html/VmiT/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#3 /var/www/html/VmiT/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/html/VmiT/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/html/VmiT/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#6 /var/www/html/VmiT/protected/controllers/SiteController.php(94): CModel->validate()
+#7 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /var/www/html/VmiT/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/VmiT/index.php?r=site/login
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/login
+---
+2017/09/10 22:30:38 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('reservation/adm...')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=reservation/admin
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/index
+---
+2017/09/10 22:30:51 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('project/admin')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=project/admin
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/
+---
+2017/09/10 23:07:04 [error] [exception.Error] Error: Undefined class constant 'ERROR_USER_NOT_APPROVED' in /var/www/html/VmiT/protected/components/UserIdentity.php:34
+Stack trace:
+#0 /var/www/html/VmiT/protected/models/LoginForm.php(64): UserIdentity->authenticate()
+#1 /var/www/html/VmiT/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#2 /var/www/html/VmiT/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#3 /var/www/html/VmiT/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#4 /var/www/html/VmiT/protected/controllers/SiteController.php(94): CModel->validate()
+#5 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#6 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/html/VmiT/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('login')
+#10 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#11 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#12 /var/www/html/VmiT/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/VmiT/index.php?r=site/login
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/login
+---
+2017/09/10 23:39:08 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('reservation/adm...')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=reservation/admin
+HTTP_REFERER=http://localhost/VmiT/index.php?r=site/login
+---
+2017/09/10 23:59:01 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('route/admin')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=route/admin
+HTTP_REFERER=http://localhost/VmiT/index.php
+---
+2017/09/10 23:59:07 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('route/admin')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=route/admin
+HTTP_REFERER=http://localhost/VmiT/index.php
+---
+2017/09/11 00:11:08 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php:183
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /var/www/html/VmiT/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/html/VmiT/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 /var/www/html/VmiT/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/html/VmiT/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/html/VmiT/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/html/VmiT/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/html/VmiT/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController('route/admin')
+#9 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/VmiT/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/VmiT/index.php?r=route/admin
+HTTP_REFERER=http://localhost/VmiT/index.php
+---
+2017/09/11 00:14:14 [error] [php] Undefined variable: user (/var/www/html/VmiT/themes/blackboot/views/layouts/main.php:140)
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /var/www/html/VmiT/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(215): CContentDecorator->run()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(309): SiteController->endWidget()
+#5 /var/www/html/VmiT/themes/blackboot/views/layouts/column1.php(9): SiteController->endContent()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(787): SiteController->renderFile()
+#9 /var/www/html/VmiT/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#13 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php
+in /var/www/html/VmiT/themes/blackboot/views/layouts/main.php (140)
+in /var/www/html/VmiT/themes/blackboot/views/layouts/column1.php (9)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (32)
+2017/09/11 00:14:15 [error] [php] Undefined variable: user (/var/www/html/VmiT/themes/blackboot/views/layouts/main.php:140)
+Stack trace:
+#0 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /var/www/html/VmiT/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /var/www/html/VmiT/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /var/www/html/VmiT/framework/web/CBaseController.php(215): CContentDecorator->run()
+#4 /var/www/html/VmiT/framework/web/CBaseController.php(309): SiteController->endWidget()
+#5 /var/www/html/VmiT/themes/blackboot/views/layouts/column1.php(9): SiteController->endContent()
+#6 /var/www/html/VmiT/framework/web/CBaseController.php(126): require()
+#7 /var/www/html/VmiT/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /var/www/html/VmiT/framework/web/CController.php(787): SiteController->renderFile()
+#9 /var/www/html/VmiT/protected/controllers/SiteController.php(32): SiteController->render()
+#10 /var/www/html/VmiT/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /var/www/html/VmiT/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/html/VmiT/framework/web/CController.php(286): SiteController->runAction()
+#13 /var/www/html/VmiT/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /var/www/html/VmiT/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /var/www/html/VmiT/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/html/VmiT/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /var/www/html/VmiT/index.php(13): CWebApplication->run()
+REQUEST_URI=/VmiT/index.php
+in /var/www/html/VmiT/themes/blackboot/views/layouts/main.php (140)
+in /var/www/html/VmiT/themes/blackboot/views/layouts/column1.php (9)
+in /var/www/html/VmiT/protected/controllers/SiteController.php (32)
