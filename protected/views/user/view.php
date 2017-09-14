@@ -8,11 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Create User', 'url'=>array('create')),
-	array('label'=>'Update User', 'url'=>array('update', 'id'=>$model->User_ID)),
-	array('label'=>'Delete User', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->User_ID),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage User', 'url'=>array('admin')),
+	array('label'=>'Update Info', 'url'=>array('update', 'id'=>$model->User_ID)),
 );
 ?>
 
@@ -21,12 +17,11 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'User_ID',
-		'Employee_ID',
-		'Username',
-		'Password',
-		'User_Role_ID',
-		'Project_ID',
-		'Is_Approved',
-	),
+            array('name'=>'Employee_ID', 'value'=> $model->employee->Employee_Name),
+            'Username',
+            'Password',
+            array('name'=>'User_Role_ID', 'value'=> $model->userRole->User_Role_Name),
+            array('name'=>'Project_ID', 'value'=> isset($model->project->Project_Name)?$model->project->Project_Name:'NULL', 'visible'=>$model->Project_ID!=''?true:false),
+            array('name'=>'Is_Approved', 'value'=> $model->Is_Approved==1?"Approved":"Not Approved"),
+    ),
 )); ?>

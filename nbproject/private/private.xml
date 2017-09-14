@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/VmiT/protected/config/database.php</file>
-            <file>file:/var/www/html/VmiT/themes/blackboot/views/layouts/main.php</file>
-            <file>file:/var/www/html/VmiT/protected/views/site/index.php</file>
-            <file>file:/var/www/html/VmiT/protected/controllers/SiteController.php</file>
-            <file>file:/var/www/html/VmiT/themes/blackboot/css/main.css</file>
+            <file>file:/var/www/html/VmiT/protected/views/user/_form.php</file>
+            <file>file:/var/www/html/VmiT/protected/views/project/_form.php</file>
+            <file>file:/var/www/html/VmiT/protected/models/User.php</file>
         </group>
     </open-files>
 </project-private>

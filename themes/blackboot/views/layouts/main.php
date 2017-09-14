@@ -53,14 +53,14 @@
 
 <style>
     #list a:hover{
-        background-color: #c52d2f !important;        
+        background-color: #234377 !important;        
         background-image: none;
     }
     #list a{        
         font-size: 14px;
     }
     #list li a:active{
-        background-color: #c52d2f !important;        
+        background-color: #234377 !important;        
         background-image: none;
     }
 </style>
@@ -107,7 +107,7 @@
                             <a class="navbar-brand" href="index.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo.png"  alt="logo"></a>
                         </div>
 
-                        <div class="collapse navbar-collapse navbar-right" style="margin-right: 40px !important;">      
+                        <div class="collapse navbar-collapse navbar-right" >      
                             <?php $this->widget('zii.widgets.CMenu',array(
                                     'encodeLabel' => false,
                                     'submenuHtmlOptions' => array(
@@ -133,8 +133,32 @@
                                                         'url' => array('/reservation/admin'),
                                                     ),                                                    
                                                 )
-                                            ),  
-                                            array('label'=>'Dinner', 'url'=>array('#'), 'visible'=>Yii::app()->user->checkAccess('3'),),                                     
+                                            ),
+                                            array('label'=>'Dinner', 'url'=>array('#'), 'visible'=>Yii::app()->user->checkAccess('3'),),    
+                                            array(
+                                            'label' => 'Users <i class="fa fa-angle-down"></i>',
+                                            'url' => '#',
+                                            'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                            'linkOptions'=> array(
+                                                'class' => 'dropdown-toggle',
+                                                'data-toggle' => 'dropdown',
+                                                ),
+                                            'itemOptions' => array('class'=>'dropdown'),
+                                            'items' => array(
+                                                    array('label'=>'My Account', 
+                                                        'url'=>array('/user/view&id='.Yii::app()->user->getId()), 
+                                                        'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                                    ),
+                                                    array('label'=>'Sign Up Requests', 
+                                                        'url'=>array('/user/admin'), 
+                                                        'visible'=>Yii::app()->user->checkAccess('2'),
+                                                    ), 
+                                                    array('label'=>'Manage Users', 
+                                                        'url'=>array('/user/admin'), 
+                                                        'visible'=>Yii::app()->user->checkAccess('1'),
+                                                    ),
+                                                )
+                                            ),                                            
                                             array(
                                             'label' => 'Master Data <i class="fa fa-angle-down"></i>',
                                             'url' => '#',

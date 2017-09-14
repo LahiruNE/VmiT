@@ -3,7 +3,6 @@
 /* @var $model User */
 /* @var $form CActiveForm */
 ?>
-
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -21,7 +20,20 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Employee_ID'); ?>
-		<?php echo $form->textField($model,'Employee_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Employee_ID',
+                    'data' =>CHtml::listData(Employee::model()->findAll(), 'Employee_ID', 'Employee_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'id' => 'Employee_ID',
+                        'style' => 'width:210px',
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                )); ?>  
 		<?php echo $form->error($model,'Employee_ID'); ?>
 	</div>
 
@@ -36,23 +48,49 @@
 		<?php echo $form->passwordField($model,'Password',array('size'=>32,'maxlength'=>32)); ?>
 		<?php echo $form->error($model,'Password'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'Retype_Password'); ?>
+		<?php echo $form->passwordField($model,'Retype_Password',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->error($model,'Retype_Password'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'User_Role_ID'); ?>
-		<?php echo $form->textField($model,'User_Role_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'User_Role_ID',
+                    'data' =>CHtml::listData(UserRole::model()->findAll(), 'User_Role_ID', 'User_Role_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'id' => 'User_Role_ID',
+                        'style' => 'width:210px',
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                )); ?>  
 		<?php echo $form->error($model,'User_Role_ID'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Project_ID'); ?>
-		<?php echo $form->textField($model,'Project_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Project_ID',
+                    'data' =>CHtml::listData(Project::model()->findAll(), 'Project_ID', 'Project_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'id' => 'Project_ID',
+                        'style' => 'width:210px',
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                )); ?>  
 		<?php echo $form->error($model,'Project_ID'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'Is_Approved'); ?>
-		<?php echo $form->textField($model,'Is_Approved'); ?>
-		<?php echo $form->error($model,'Is_Approved'); ?>
 	</div>
 
 	<div class="row buttons">

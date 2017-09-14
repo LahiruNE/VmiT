@@ -77,25 +77,49 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
+            $model=new User;
+            $Login_model=new LoginForm;
 
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
+            // Uncomment the following line if AJAX validation is needed
+            // $this->performAjaxValidation($model);
+            if(isset($_POST['LoginForm'])) {
+                $Login_model->attributes=$_POST['LoginForm'];
+                    // validate user input and redirect to the previous page if valid
+                if($Login_model->validate() && $Login_model->login())
+                {
+                    $this->redirect(Yii::app()->user->returnUrl);
+                }
+            } else if(isset($_POST['User'])) {
+                $model->attributes=$_POST['User'];
+                if($model->save())
+                {
+                    $this->refresh();
+                    echo '<script>alert("Registered. Please Login!")</script>';
+                }
+            }
 
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
+            $this->render('register_login', array('loginFormModel'=>$Login_model, 'newUserModel'=>$model));
+
+//		$model=new LoginForm;
+//		// if it is ajax validation request
+//		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+//		{
+//			echo CActiveForm::validate($model);
+//			Yii::app()->end();
+//		}
+//
+//		// collect user input data
+//		if(isset($_POST['LoginForm']))
+//		{
+//			$model->attributes=$_POST['LoginForm'];
+//			// validate user input and redirect to the previous page if valid
+//			if($model->validate() && $model->login())
+//				$this->redirect(Yii::app()->user->returnUrl);
+//		}
+//		// display the login form
+//		$this->render('login',array(
+//                        'model'=>$model,
+//                     ));
 	}
 
 	/**
