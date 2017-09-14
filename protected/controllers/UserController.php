@@ -66,6 +66,10 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+                        $model->Is_Approved=0;
+                        $model->Password = md5($_POST['User']['Password']);
+                        $model->Retype_Password = md5($_POST['User']['Retype_Password']);
+                        
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->User_ID));
 		}
@@ -83,13 +87,25 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+                $model->Retype_Password=$model->Password;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+                        
+                        if($this->isValidMd5($_POST['User']['Password'])){
+                            $model->Password = $_POST['User']['Password'];
+                        }else{
+                            $model->Password = md5($_POST['User']['Password']);
+                        }
+                        
+                        if($this->isValidMd5($_POST['User']['Retype_Password'])){
+                            $model->Retype_Password = $_POST['User']['Retype_Password'];
+                        }else{
+                            $model->Retype_Password = md5($_POST['User']['Retype_Password']);
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->User_ID));
 		}
@@ -166,4 +182,9 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function isValidMd5($md5 ='')
+        {
+            return preg_match('/^[a-f0-9]{32}$/', $md5);
+        }
 }

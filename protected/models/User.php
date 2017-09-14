@@ -40,6 +40,7 @@ class User extends CActiveRecord
                     array('Employee_ID, Username, Password, User_Role_ID, Is_Approved, Retype_Password', 'required'),
                     array('Employee_ID, User_Role_ID, Project_ID, Is_Approved', 'numerical', 'integerOnly'=>true),
                     array('Username, Password, Retype_Password', 'length', 'max'=>32),
+                    array('Retype_Password', 'compare', 'compareAttribute'=>'Password'),
                     // The following rule is used by search().
                     // @todo Please remove those attributes that should not be searched.
                     array('User_ID, Employee_ID, Username, Password, User_Role_ID, Project_ID, Is_Approved', 'safe', 'on'=>'search'),
@@ -70,7 +71,7 @@ class User extends CActiveRecord
                     'Employee_ID' => 'Employee',
                     'Username' => 'Username',
                     'Password' => 'Password',
-                    'Retype_Password' =>'Retypr Password',
+                    'Retype_Password' =>'Retype Password',
                     'User_Role_ID' => 'User Role',
                     'Project_ID' => 'Project',
                     'Is_Approved' => 'Is Approved',
