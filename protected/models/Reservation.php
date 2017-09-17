@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'reservation':
  * @property integer $Reservation_ID
+ * @property integer $User_ID
  * @property integer $Route_ID
  * @property integer $Time_ID
  * @property integer $Reason_ID
@@ -14,6 +15,7 @@
  * @property Route $route
  * @property Time $time
  * @property Reason $reason
+ * @property User $user
  */
 class Reservation extends CActiveRecord
 {
@@ -33,12 +35,12 @@ class Reservation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Route_ID, Time_ID, Reason_ID, Nearest_City', 'required'),
-			array('Route_ID, Time_ID, Reason_ID', 'numerical', 'integerOnly'=>true),
+			array('User_ID, Route_ID, Time_ID, Reason_ID, Nearest_City', 'required'),
+			array('User_ID, Route_ID, Time_ID, Reason_ID', 'numerical', 'integerOnly'=>true),
 			array('Nearest_City', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('Reservation_ID, Route_ID, Time_ID, Reason_ID, Nearest_City', 'safe', 'on'=>'search'),
+			array('Reservation_ID, User_ID, Route_ID, Time_ID, Reason_ID, Nearest_City', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +55,7 @@ class Reservation extends CActiveRecord
 			'route' => array(self::BELONGS_TO, 'Route', 'Route_ID'),
 			'time' => array(self::BELONGS_TO, 'Time', 'Time_ID'),
 			'reason' => array(self::BELONGS_TO, 'Reason', 'Reason_ID'),
+			'user' => array(self::BELONGS_TO, 'User', 'User_ID'),
 		);
 	}
 
@@ -63,6 +66,7 @@ class Reservation extends CActiveRecord
 	{
 		return array(
 			'Reservation_ID' => 'Reservation',
+			'User_ID' => 'User',
 			'Route_ID' => 'Route',
 			'Time_ID' => 'Time',
 			'Reason_ID' => 'Reason',
@@ -89,6 +93,7 @@ class Reservation extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('Reservation_ID',$this->Reservation_ID);
+		$criteria->compare('User_ID',$this->User_ID);
 		$criteria->compare('Route_ID',$this->Route_ID);
 		$criteria->compare('Time_ID',$this->Time_ID);
 		$criteria->compare('Reason_ID',$this->Reason_ID);

@@ -103,6 +103,7 @@ class User extends CActiveRecord
             $criteria->compare('User_Role_ID',$this->User_Role_ID);
             $criteria->compare('Project_ID',$this->Project_ID);
             $criteria->compare('Is_Approved',$this->Is_Approved);
+            $criteria->compare('Is_Approved',0);
 
             return new CActiveDataProvider($this, array(
                     'criteria'=>$criteria,

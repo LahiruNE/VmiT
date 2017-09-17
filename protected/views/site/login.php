@@ -52,7 +52,7 @@
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 
-<div class="signup_prompt">
+<!--<div class="signup_prompt">
     <span><h2>Still don't have registered?</h2></span>
     <img id="prompt" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/sign-up.png"  alt="sign up">
-</div>
+</div>-->

@@ -63,6 +63,9 @@
         background-color: #234377 !important;        
         background-image: none;
     }
+    .container > .navbar-collapse{
+        padding: 0 !important;
+    }
 </style>
 </head>
 
@@ -77,12 +80,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
+                                <li><a href="https://www.facebook.com/virtusa.colombo/?ref=br_rs"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/VirtusaCorp?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/5140/"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.virtusa.com/"><i class="fa fa-dribbble"></i></a></li>
                             <div class="search">
                                 <form role="form">
                                     <input type="text" class="search-form" autocomplete="off" placeholder="Search">
@@ -97,7 +98,7 @@
 
         <nav class="navbar navbar-inverse" role="banner" style="border-radius:0px !important;">
                     <div class="container">
-                        <div class="navbar-header" style="margin-left: 70px !important;">
+                        <div class="navbar-header" style="margin-left: 30px !important;">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -150,7 +151,7 @@
                                                         'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
                                                     ),
                                                     array('label'=>'Sign Up Requests', 
-                                                        'url'=>array('/user/admin'), 
+                                                        'url'=>array('/user/regRequest'), 
                                                         'visible'=>Yii::app()->user->checkAccess('2'),
                                                     ), 
                                                     array('label'=>'Manage Users', 

@@ -10,15 +10,22 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
-	<div class="row">
-		<?php echo $form->label($model,'User_ID'); ?>
-		<?php echo $form->textField($model,'User_ID'); ?>
-	</div>
-
 	<div class="row">
 		<?php echo $form->label($model,'Employee_ID'); ?>
-		<?php echo $form->textField($model,'Employee_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Employee_ID',
+                    'data' =>CHtml::listData(Employee::model()->findAll(), 'Employee_ID', 'Employee_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
@@ -27,27 +34,39 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Password'); ?>
-		<?php echo $form->passwordField($model,'Password',array('size'=>32,'maxlength'=>32)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'User_Role_ID'); ?>
-		<?php echo $form->textField($model,'User_Role_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'User_Role_ID',
+                    'data' =>CHtml::listData(UserRole::model()->findAll(), 'User_Role_ID', 'User_Role_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Project_ID'); ?>
-		<?php echo $form->textField($model,'Project_ID'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'Is_Approved'); ?>
-		<?php echo $form->textField($model,'Is_Approved'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Project_ID',
+                    'data' =>CHtml::listData(Project::model()->findAll(), 'Project_ID', 'Project_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 <?php $this->endWidget(); ?>

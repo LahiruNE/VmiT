@@ -22,6 +22,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'Reservation_ID',
+		'User_ID',
 		'Route_ID',
 		'Time_ID',
 		'Reason_ID',

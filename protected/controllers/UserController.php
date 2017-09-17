@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','RegRequest','AcceptRequest'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -67,9 +67,12 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
                         $model->Is_Approved=0;
-                        $model->Password = md5($_POST['User']['Password']);
-                        $model->Retype_Password = md5($_POST['User']['Retype_Password']);
-                        
+                                                
+                        if($model->validate())
+                        {
+                            $model->Password = md5($_POST['User']['Password']);
+                            $model->Retype_Password = md5($_POST['User']['Retype_Password']);
+                        }
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->User_ID));
 		}
@@ -154,6 +157,36 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionRegRequest()
+	{
+            $this->layout='//layouts/column1';
+                                   
+            $model=new User('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['User']))
+                    $model->attributes=$_GET['User'];
+
+            $this->render('request',array(
+                    'model'=>$model,
+            ));
+	}
+        
+        public function actionAcceptRequest($id)
+        {            
+            $model= User::model()->findByPk($id);
+            
+            $model->Is_Approved=1;
+            
+            if($model->update())
+            {
+                echo 'Successfully Done!';
+            }else
+            {
+                echo 'Operation Failed!';
+            }
+                        
+        }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

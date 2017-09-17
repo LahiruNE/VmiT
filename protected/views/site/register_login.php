@@ -16,7 +16,7 @@
                 ?>                
             </div>
         </td>
-        <td class="signup_form" style="display: none">
+        <td class="signup_form" >
             <h1>Sign Up</h1>
 
             <p>Register with your project.</p>

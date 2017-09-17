@@ -17,7 +17,19 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#user-grid').yiiGridView('update', {
+	$.fn.yiiGridView.update('user-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.search-form form').keyup(function(){
+	$.fn.yiiGridView.update('user-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.search-form form').change(function(){
+	$.fn.yiiGridView.update('user-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -37,19 +49,28 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
-		'User_ID',
-		'Employee_ID',
-		'Username',
-		'Password',
-		'User_Role_ID',
-		'Project_ID',
+		array('name'=>'Employee_ID', 'value'=>'$data->employee->Employee_Name'),
+                'Username',
+                array('name'=>'User_Role_ID', 'value'=>'$data->userRole->User_Role_Name'),
+                array('name'=>'Project_ID', 'value'=>'$data->project->Project_Name'),
 		/*
 		'Is_Approved',
 		*/
 		array(
-			'class'=>'CButtonColumn',
-		),
+                    'class' => 'CButtonColumn',
+                    'deleteConfirmation'=>'Do you want to delete this record?',
+                    'afterDelete'=>'function(link,success,data){if(success) $("#statusMsg").html(data); }',
+                    'template' => '{view}{update}{delete}',
+                    'buttons' => array(
+                        'update' => array(
+                            //'options'=>array('target'=>'_blank'),
+                        ),
+                        'view' => array(
+                            //'options' => array('target' => '_blank')
+                        )
+                    )
+                ),
 	),
 )); ?>

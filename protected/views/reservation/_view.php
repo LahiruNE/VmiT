@@ -9,6 +9,10 @@
 	<?php echo CHtml::link(CHtml::encode($data->Reservation_ID), array('view', 'id'=>$data->Reservation_ID)); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('User_ID')); ?>:</b>
+	<?php echo CHtml::encode($data->User_ID); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Route_ID')); ?>:</b>
 	<?php echo CHtml::encode($data->Route_ID); ?>
 	<br />

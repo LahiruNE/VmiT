@@ -91,11 +91,16 @@ class SiteController extends Controller
                 }
             } else if(isset($_POST['User'])) {
                 $model->attributes=$_POST['User'];
-                if($model->save())
+                $model->Is_Approved=0;
+                
+                if($model->validate())
                 {
-                    $this->refresh();
-                    echo '<script>alert("Registered. Please Login!")</script>';
+                    $model->Password = md5($_POST['User']['Password']);
+                    $model->Retype_Password = md5($_POST['User']['Retype_Password']);
                 }
+                
+                if($model->save())
+                        $this->redirect(array('view','id'=>$model->User_ID));
             }
 
             $this->render('register_login', array('loginFormModel'=>$Login_model, 'newUserModel'=>$model));

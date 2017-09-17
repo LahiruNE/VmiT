@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'User_ID'); ?>
+		<?php echo $form->textField($model,'User_ID'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'Route_ID'); ?>
 		<?php echo $form->textField($model,'Route_ID'); ?>
 	</div>

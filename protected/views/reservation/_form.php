@@ -20,6 +20,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'User_ID'); ?>
+		<?php echo $form->textField($model,'User_ID'); ?>
+		<?php echo $form->error($model,'User_ID'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'Route_ID'); ?>
 		<?php echo $form->textField($model,'Route_ID'); ?>
 		<?php echo $form->error($model,'Route_ID'); ?>
