@@ -5,6 +5,8 @@
         <group>
             <file>file:/var/www/html/VmiT/protected/controllers/UserController.php</file>
             <file>file:/var/www/html/VmiT/protected/views/user/_form.php</file>
+            <file>file:/var/www/html/VmiT/protected/views/user/admin.php</file>
+            <file>file:/var/www/html/VmiT/themes/blackboot/views/layouts/main.php</file>
             <file>file:/var/www/html/VmiT/protected/views/project/_form.php</file>
             <file>file:/var/www/html/VmiT/protected/models/User.php</file>
         </group>

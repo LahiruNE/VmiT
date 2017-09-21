@@ -38,6 +38,8 @@ class User extends CActiveRecord
             // will receive user inputs.
             return array(
                     array('Employee_ID, Username, Password, User_Role_ID, Is_Approved, Retype_Password', 'required'),
+                    array('Username', 'unique'),
+                    array('Employee_ID', 'unique','message'=> 'Selected Employee has already been taken.'),
                     array('Employee_ID, User_Role_ID, Project_ID, Is_Approved', 'numerical', 'integerOnly'=>true),
                     array('Username, Password, Retype_Password', 'length', 'max'=>32),
                     array('Retype_Password', 'compare', 'compareAttribute'=>'Password'),
@@ -75,6 +77,8 @@ class User extends CActiveRecord
                     'User_Role_ID' => 'User Role',
                     'Project_ID' => 'Project',
                     'Is_Approved' => 'Is Approved',
+                    'sign_up' => 'Sign Up',
+                    'login' => 'Log In',
             );
     }
 

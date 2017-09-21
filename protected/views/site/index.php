@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
+            
         </div><!--/.carousel-inner-->
     </div><!--/.carousel-->
     <a class="prev hidden-xs" href="#main-slider" data-slide="prev">

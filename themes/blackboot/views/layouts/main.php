@@ -75,7 +75,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square" ></i>  +0123 456 70 90</p></div>
+                        
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -240,8 +240,8 @@
                                 'activeCssClass'=> 'active',
                                 'items'=>array(
                                         array('label'=>'Home', 'url'=>array('/site/index')),
-                                        array('label'=>'Transport', 'url'=>array('/site/contact')),
-                                        array('label'=>'Dinner', 'url'=>array('/site/contact')),
+                                        //array('label'=>'Transport', 'url'=>array('/site/contact')),
+                                        //array('label'=>'Dinner', 'url'=>array('/site/contact')),
                                         array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                                         array('label'=>'Contact Us', 'url'=>array('/site/contact')),
                                         //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

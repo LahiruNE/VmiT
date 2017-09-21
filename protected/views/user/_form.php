@@ -58,7 +58,7 @@
     <tr>
 	<div class="row">
             <td><?php echo $form->labelEx($model,'Password'); ?></td>
-            <td><?php echo $form->textField($model,'Password',array('size'=>32,'maxlength'=>32)); ?></td>
+            <td><?php echo $form->passwordField($model,'Password',array('size'=>32,'maxlength'=>32)); ?></td>
             <td><?php echo $form->error($model,'Password'); ?></td>
 	</div>
     </tr>
@@ -106,7 +106,7 @@
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
                     ),
-                )); ?>  
+                )); ?>   
             </td>
             <td><?php echo $form->error($model,'Project_ID'); ?></td>
 	</div>
