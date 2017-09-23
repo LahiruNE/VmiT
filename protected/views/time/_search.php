@@ -12,17 +12,18 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'Time_ID'); ?>
-		<?php echo $form->textField($model,'Time_ID'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'Time'); ?>
-		<?php echo $form->textField($model,'Time',array('size'=>10,'maxlength'=>10)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+            <?php echo $form->label($model,'Time'); ?>
+            <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+                $this->widget('CJuiDateTimePicker',array(
+                    'model'=>$model, //Model object
+                    'attribute'=>'Time', //attribute name
+                    'mode'=>'time', //use "time","date" or "datetime" (default)                        
+                    'options'=>array(
+                        'hourMax'=>'24',
+                        'minuteMax'=>'60',
+                    ) // jquery plugin options
+                ));
+            ?>
 	</div>
 
 <?php $this->endWidget(); ?>

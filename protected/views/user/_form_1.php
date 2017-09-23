@@ -3,18 +3,7 @@
 /* @var $model User */
 /* @var $form CActiveForm */
 ?>
-<script>
-    $(document).ready(function(){
-        if(<?php echo Yii::app()->user->getState('roles')?> != ''){
-            if(<?php echo Yii::app()->user->getState('roles')?>==1){
-                $("#role").show();            
-            }else{
-                $("#role").hide();
-            }
-        }
-        
-    });
-</script>
+
 
 <div class="form">   
 <center><h1>Sign Up</h1></center>
@@ -26,12 +15,31 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+        'enableClientValidation'=>true,
+        'clientOptions'=>array(
+              'validateOnSubmit'=>true,
+              'afterValidate' => 'js:function(form, data, hasError) { 
+                  if(hasError) {
+                      
+                      for(var i in data) $("#"+i).addClass("error_input");
+                      return false;
+                  }
+                  else {
+                      form.children().removeClass("error_input");
+                      return true;
+                  }
+              }',
+              'afterValidateAttribute' => 'js:function(form, attribute, data, hasError) {
+                  if(hasError) $("#"+attribute.id).parent().addClass("error_input");
+                      else $("#"+attribute.id).parent().removeClass("error_input"); 
+              }'
+          ),
 )); ?>        
     
-    <table style="position: relative; margin-top: -30px;">
+    <table style="position: relative; margin-left: 15px;">
     <tr>
-	<div class="row">
-            <td style="padding-bottom: 10px;"><?php
+        <td>
+            <div class="row employee" style="padding-bottom: 10px;"><?php
                 $this->widget('ext.select2.ESelect2', array(
                     'model' => $model,
                     'attribute' => 'Employee_ID',
@@ -44,52 +52,32 @@
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
                     ),
-                )); ?> 
-            </td>
-            <td><?php echo $form->error($model,'Employee_ID'); ?></td>
-	</div>
+                )); ?>
+                <td><?php echo $form->error($model,'Employee_ID'); ?></td>
+            </div>
+        </td>
     </tr>
     <tr>
-	<div class="row">
-            <td><?php echo $form->textField($model,'Username',array('class'=>'sign', 'size'=>32,'maxlength'=>32, 'placeholder'=>'Username')); ?></td>
+        <td>
+            <div class="row username"><?php echo $form->textField($model,'Username',array('class'=>'sign', 'size'=>32,'maxlength'=>32, 'placeholder'=>'Username')); ?></div>
             <td><?php echo $form->error($model,'Username'); ?></td>
-	</div>
+	</td>
     </tr>
     <tr>
-	<div class="row">
-            <td><?php echo $form->passwordField($model,'Password',array('class'=>'sign','size'=>32,'maxlength'=>32, 'placeholder'=>'Password')); ?></td>
+	<td>
+            <div class="row password"><?php echo $form->passwordField($model,'Password',array('class'=>'sign','size'=>32,'maxlength'=>32, 'placeholder'=>'Password')); ?></div>
             <td><?php echo $form->error($model,'Password'); ?></td>
-	</div>
+	</td>
     </tr>
     <tr>
-        <div class="row">
-            <td><?php echo $form->passwordField($model,'Retype_Password',array('class'=>'sign','size'=>32,'maxlength'=>32, 'placeholder'=>'Retype Password')); ?></td>
+        <td>
+            <div class="row retype"><?php echo $form->passwordField($model,'Retype_Password',array('class'=>'sign','size'=>32,'maxlength'=>32, 'placeholder'=>'Retype Password')); ?></div>
             <td><?php echo $form->error($model,'Retype_Password'); ?></td>
-	</div>
-    </tr>
-    <tr id="role" style="display: none">
-        <div class="row" >
-            <td><?php
-                $this->widget('ext.select2.ESelect2', array(
-                    'model' => $model,
-                    'attribute' => 'User_Role_ID',
-                    'data' =>CHtml::listData(UserRole::model()->findAll(), 'User_Role_ID', 'User_Role_Name'),
-                    'htmlOptions' => array(
-                        'prompt' => '- User Role -',
-                        'id' => 'User_Role_ID',
-                        'style' => 'width:270px',
-                    ),
-                    'options' => array(
-                        'containerCssClass' => 'mainDrops',
-                    ),
-                )); ?>  
-            </td>
-            <td><?php echo $form->error($model,'User_Role_ID'); ?></td>
-	</div>
+	</td>
     </tr>
     <tr>
-	<div class="row">
-            <td style="padding-top: 10px;"><?php
+	<td >
+            <div class="row project"><?php
                 $this->widget('ext.select2.ESelect2', array(
                     'model' => $model,
                     'attribute' => 'Project_ID',
@@ -102,12 +90,12 @@
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
                     ),
-                )); ?>   
-            </td>
-            <td><?php echo $form->error($model,'Project_ID'); ?></td>
-	</div>
+                )); ?>  
+                <td><?php echo $form->error($model,'Project_ID'); ?></td>
+            </div>            
+	</td>
     </tr>
-    <tr><td style="text-align: left; padding-top: 10px; padding-left: 230px; max-width: 150px !important;">        
+    <tr><td style="text-align: left; padding-top: 10px; padding-left: 217px; max-width: 150px !important;">        
             <?php echo $form->label($model,'login', array('onclick'=>'loginPrompt()')); ?>       
     </td></tr>
     <tr>
@@ -131,7 +119,14 @@
         padding-left: 10px !important;
         height: 35px;
         width: 270px; 
-        margin-left: 15px;
+        margin-left: 3px;
+    }
+    
+    .error_input{
+        border: 2px solid red; 
+        width:274px; 
+        height:35px; 
+        border-radius:5px;
     }
     
 </style>

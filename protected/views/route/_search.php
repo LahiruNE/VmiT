@@ -12,22 +12,39 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'Route_ID'); ?>
-		<?php echo $form->textField($model,'Route_ID'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'Route_Number'); ?>
-		<?php echo $form->textField($model,'Route_Number'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Route_Number',
+                    'data' =>CHtml::listData(Route::model()->findAll(), 'Route_Number', 'Route_Number'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Route_Description'); ?>
-		<?php echo $form->textField($model,'Route_Description',array('size'=>60,'maxlength'=>1024)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Route_Description',
+                    'data' =>CHtml::listData(Route::model()->findAll(), 'Route_Description', 'Route_Description'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -12,17 +12,60 @@
 )); ?>
     <div class="row">
         <?php echo $form->label($model,'Project_Name'); ?>
-        <?php echo $form->textField($model,'Project_Name'); ?>
+        <?php
+            $this->widget('ext.select2.ESelect2', array(
+                'model' => $model,
+                'attribute' => 'Project_Name',
+                'data' =>CHtml::listData(Project::model()->findAll(), 'Project_Name', 'Project_Name'),
+                'htmlOptions' => array(
+                    'prompt' => '- Select -',
+                    'style' => 'width:210px',   
+                ),
+                'options' => array(
+                    'containerCssClass' => 'mainDrops',
+                ),
+            ));                 
+            ?> 
     </div>
 
     <div class="row">
         <?php echo $form->label($model,'Start_Date'); ?>
-        <?php echo $form->textField($model,'Start_Date'); ?>
+        <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+            $this->widget('CJuiDateTimePicker',array(
+                'model'=>$model, //Model object
+                'attribute'=>'Start_Date', //attribute name
+                'mode'=>'date', //use "time","date" or "datetime" (default)   
+                'language' => 'en',
+                'options'=>array(
+                    'dateFormat'=>'yy-mm-dd',
+                    'changeMonth'=>true,
+                    'changeYear'=>true,
+                    'yearRange'=>'1990:2099',
+                    'minDate' => '1990-01-01', 
+                    'maxDate' => date('Y-m-d'),
+                ) // jquery plugin options
+            ));
+        ?>
     </div>
 
     <div class="row">
         <?php echo $form->label($model,'End_Date'); ?>
-        <?php echo $form->textField($model,'End_Date'); ?>
+        <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+            $this->widget('CJuiDateTimePicker',array(
+                'model'=>$model, //Model object
+                'attribute'=>'End_Date', //attribute name
+                'mode'=>'date', //use "time","date" or "datetime" (default)   
+                'language' => 'en',
+                'options'=>array(
+                    'dateFormat'=>'yy-mm-dd',
+                    'changeMonth'=>true,
+                    'changeYear'=>true,
+                    'yearRange'=>'1990:2099',
+                    'minDate' => '1990-01-01', 
+                    'maxDate' => date('Y-m-d'),
+                ) // jquery plugin options
+            ));
+        ?>
     </div>
 
     <div class="row"> 
@@ -36,16 +79,12 @@
             'htmlOptions' => array(
                 'prompt' => '- Select -',
                 'id' => 'attribute',
-                'style' => 'width:150px',                                    
+                'style' => 'width:210px',                                    
             ),
             'options' => array(
                 'containerCssClass' => 'mainDrops',
             ),
         )); ?>
-    </div>
-
-    <div class="row buttons" style="display: none">
-        <?php echo CHtml::submitButton('Search'); ?>
     </div>
 
 <?php $this->endWidget(); ?>

@@ -14,11 +14,23 @@ $this->menu=array(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle();
+	$('.ad-search-form').toggle();
 	return false;
 });
-$('.search-form form').submit(function(){
-	$('#time-grid').yiiGridView('update', {
+$('.ad-search-form form').submit(function(){
+	$.fn.yiiGridView.update('time-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.ad-search-form form').keyup(function(){
+	$.fn.yiiGridView.update('time-grid', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+$('.ad-search-form form').change(function(){
+	$.fn.yiiGridView.update('time-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,10 +38,10 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Times</h1>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<h1>Manage Schedules</h1>
+<br>
+<?php echo CHtml::link('<i class="fa fa-search" style="font-size: 24px;"></i>&nbsp;&nbsp;Advanced Search','#',array('class'=>'search-button', 'style'=>'font-size:16px;')); ?>
+<div class="ad-search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -38,12 +50,39 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'time-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
-		'Time_ID',
-		'Time',
-		array(
-			'class'=>'CButtonColumn',
-		),
+            'Time_ID',
+            'Time',
+            array(
+                'class' => 'CButtonColumn',
+                'htmlOptions' => array('width'=>'130px'),
+                //'deleteConfirmation'=>'Do you want to delete this record?',
+                //'afterDelete'=>'function(link,success,data){if(success) $("#statusMsg").html(data); }',
+                'template' => '{view}&nbsp;&nbsp;&nbsp;{update}&nbsp;&nbsp;&nbsp;{delete}',
+                'buttons' => array(
+                    'view' => array
+                    (
+                        'label'=>'View Profile',
+                        'imageUrl'=>Yii::app()->theme->baseUrl.'/img/ico/view1.png',
+                        'options'=>array('title'=>'View Profile'),
+//                        'url'=>'Yii::app()->createUrl("users/email", array("id"=>$data->id))',
+                    ),
+                    'update' => array
+                    (
+                        'label'=>'Edit',
+                        'imageUrl'=>Yii::app()->theme->baseUrl.'/img/ico/edit.png',
+                        'options'=>array('title'=>'Edit'),
+                    ),
+                    'delete' => array
+                    (
+                        'label'=>'Delete',
+                        'imageUrl'=>Yii::app()->theme->baseUrl.'/img/ico/delete.png',
+                        'options'=>array('title'=>'Delete'),
+//                        'visible'=>'$data->score > 0',
+//                        'click'=>'rejectRequest($data->User_ID)',
+                    ),
+                )
+            ),
 	),
 )); ?>

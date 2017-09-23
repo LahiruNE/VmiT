@@ -54,7 +54,7 @@ class Reason extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'Reason' => 'Reason',
+			'Reason' => '#Reason Code',
 			'Reason_Description' => 'Reason Description',
 		);
 	}

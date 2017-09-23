@@ -7,16 +7,16 @@
     });
     
     function loginPrompt(){
+        $('.login_form').css('display','visible').hide().fadeIn("slow");
         $('.button').hide();
         $('#word').hide();
-        $('.login_form').show(); 
         $('.signup_form').hide();
     }
     
     function signupPrompt(){
+        $('.signup_form').css('display','visible').hide().fadeIn("slow");
         $('.button').hide();
         $('#word').hide(); 
-        $('.signup_form').show();
         $('.login_form').hide(); 
     }
 </script>

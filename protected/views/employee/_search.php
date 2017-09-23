@@ -13,21 +13,43 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'Employee_ID'); ?>
-		<?php echo $form->textField($model,'Employee_ID'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Employee_ID',
+                    'data' =>CHtml::listData(Employee::model()->findAll(), 'Employee_ID', 'Employee_ID'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Employee_Name'); ?>
-		<?php echo $form->textField($model,'Employee_Name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Employee_Name',
+                    'data' =>CHtml::listData(Employee::model()->findAll(), 'Employee_Name', 'Employee_Name'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Phone_Number'); ?>
 		<?php echo $form->textField($model,'Phone_Number'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

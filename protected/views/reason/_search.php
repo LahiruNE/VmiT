@@ -13,16 +13,38 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'Reason'); ?>
-		<?php echo $form->textField($model,'Reason'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Reason',
+                    'data' =>CHtml::listData(Reason::model()->findAll(), 'Reason', 'Reason'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Reason_Description'); ?>
-		<?php echo $form->textField($model,'Reason_Description',array('size'=>60,'maxlength'=>1024)); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php
+                $this->widget('ext.select2.ESelect2', array(
+                    'model' => $model,
+                    'attribute' => 'Reason_Description',
+                    'data' =>CHtml::listData(Reason::model()->findAll(), 'Reason_Description', 'Reason_Description'),
+                    'htmlOptions' => array(
+                        'prompt' => '- Select -',
+                        'style' => 'width:210px',   
+                    ),
+                    'options' => array(
+                        'containerCssClass' => 'mainDrops',
+                    ),
+                ));                 
+                ?> 
 	</div>
 
 <?php $this->endWidget(); ?>

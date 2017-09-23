@@ -21,10 +21,10 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'Project_ID',
-		'Project_Name',
-		'Start_Date',
-		'End_Date',
-		'Status',
+            'Project_ID',
+            'Project_Name',
+            'Start_Date',
+            'End_Date',
+            array('name'=>'Status', 'value'=>$model->Status==0?"Ongoing":"Completed"),
 	),
 )); ?>
