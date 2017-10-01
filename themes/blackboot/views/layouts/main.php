@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     date_default_timezone_set('Asia/Colombo');
     
     Yii::app()->clientscript
@@ -34,36 +33,6 @@
 
 ?>
 
-=======
-	Yii::app()->clientscript
-		// use it when you need it!
-		
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
-		->registerCoreScript( 'jquery' )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-modal.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-dropdown.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-scrollspy.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tab.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tooltip.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-popover.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-button.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-collapse.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap.min.js', CClientScript::POS_END )
-                ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap.affix.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/html5shiv.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/jquery.isotope.min.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/jquery.prettyPhoto.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
-		
-		
-?>
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -135,11 +104,7 @@
 
         <nav class="navbar navbar-inverse" role="banner" style="border-radius:0px !important;">
                     <div class="container">
-<<<<<<< HEAD
                         <div class="navbar-header" style="margin-left: 50px !important;">
-=======
-                        <div class="navbar-header" style="margin-left: 30px !important;">
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -149,11 +114,7 @@
                             <a class="navbar-brand" href="index.html"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo.png"  alt="logo"></a>
                         </div>
 
-<<<<<<< HEAD
                         <div class="collapse navbar-collapse navbar-right" style="margin-right: 30px !important;">      
-=======
-                        <div class="collapse navbar-collapse navbar-right" >      
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                             <?php $this->widget('zii.widgets.CMenu',array(
                                     'encodeLabel' => false,
                                     'submenuHtmlOptions' => array(
@@ -175,7 +136,6 @@
                                             'itemOptions' => array('class'=>'dropdown'),
                                             'items' => array(
                                                     array(
-<<<<<<< HEAD
                                                         'label' => 'Make Reservation',
                                                         'url' => array('/reservation/create'),
                                                     ),  
@@ -191,11 +151,6 @@
                                                         'label' => 'Reservation History',
                                                         'url' => array('/reservation/history'),
                                                     ), 
-=======
-                                                        'label' => 'Reservation',
-                                                        'url' => array('/reservation/admin'),
-                                                    ),                                                    
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                                                 )
                                             ),
                                             array('label'=>'Dinner', 'url'=>array('#'), 'visible'=>Yii::app()->user->checkAccess('3'),),    
@@ -258,11 +213,7 @@
                                                         'url' => array('/reason/admin'),
                                                     ),
                                                 )
-<<<<<<< HEAD
                                             ),    
-=======
-                                            ),                                        
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                                             array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                                             array('label'=>'Contact Us', 'url'=>array('/site/contact')),
                                             array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -321,7 +272,6 @@
         </footer>
 </body>
 </html>
-<<<<<<< HEAD
 <?php 
     if(Yii::app()->user->hasFlash('res_success'))
     { 
@@ -340,5 +290,3 @@
           )</script>";                        
     }
 ?>
-=======
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a

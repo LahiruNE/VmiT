@@ -18,7 +18,6 @@ $this->menu=array(
 
 <h1>Update Reservation <?php echo $model->Reservation_ID; ?></h1>
 
-<<<<<<< HEAD
 <canvas id="canvas" width="500" height="500"></canvas>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
 
@@ -177,6 +176,3 @@ $this->menu=array(
         margin-top:-150px;
     }
 </style>
-=======
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a

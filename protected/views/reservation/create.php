@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-<<<<<<< HEAD
 	array('label'=>'My Reservations', 'url'=>array('userAdmin')),	
 );
 ?>
@@ -174,13 +173,3 @@ $this->menu=array(
         margin-top:-150px;
     }
 </style>
-=======
-	array('label'=>'List Reservation', 'url'=>array('index')),
-	array('label'=>'Manage Reservation', 'url'=>array('admin')),
-);
-?>
-
-<h1>Create Reservation</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a

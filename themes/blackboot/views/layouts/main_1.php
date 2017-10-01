@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     date_default_timezone_set('Asia/Colombo');
     
     Yii::app()->clientscript
@@ -28,34 +27,6 @@
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
 
-=======
-	Yii::app()->clientscript
-		// use it when you need it!
-		
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
-		->registerCoreScript( 'jquery' )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-modal.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-dropdown.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-scrollspy.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tab.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-tooltip.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-popover.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-button.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-collapse.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap.min.js', CClientScript::POS_END )
-                ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap.affix.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/html5shiv.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/jquery.isotope.min.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/jquery.prettyPhoto.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
-		
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 		
 ?>
 <!DOCTYPE html>
@@ -130,11 +101,7 @@
         <nav class="navbar navbar-inverse" role="banner" style="border-radius:0px !important;">
                     <div class="container">                       
 
-<<<<<<< HEAD
                         <div class="collapse navbar-collapse navbar-right" style="margin-right: 62px !important;">      
-=======
-                        <div class="collapse navbar-collapse navbar-right">      
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                             <?php $this->widget('zii.widgets.CMenu',array(
                                     'encodeLabel' => false,
                                     'submenuHtmlOptions' => array(
@@ -221,11 +188,7 @@
                                                         'url' => array('/reason/admin'),
                                                     ),
                                                 )
-<<<<<<< HEAD
                                             ),          
-=======
-                                            ),                                        
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                                             array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                                             array('label'=>'Contact Us', 'url'=>array('/site/contact')),
                                             array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

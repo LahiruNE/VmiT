@@ -36,11 +36,7 @@ class ReservationController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-<<<<<<< HEAD
 				'actions'=>array('admin','delete','history', 'userAdmin'),
-=======
-				'actions'=>array('admin','delete'),
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -73,7 +69,6 @@ class ReservationController extends Controller
 
 		if(isset($_POST['Reservation']))
 		{
-<<<<<<< HEAD
                     $model->attributes = $_POST['Reservation'];
                     $model->User_ID = Yii::app()->user->id;
                     $model->Added_Date = date("Y-m-d G:i:s");
@@ -82,11 +77,6 @@ class ReservationController extends Controller
                         Yii::app()->user->setFlash('res_success', "Reservation is added successfully!");
                         $this->redirect(array('view','id'=>$model->Reservation_ID));
                     }
-=======
-			$model->attributes=$_POST['Reservation'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->Reservation_ID));
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 		}
 
 		$this->render('create',array(
@@ -109,15 +99,10 @@ class ReservationController extends Controller
 		if(isset($_POST['Reservation']))
 		{
 			$model->attributes=$_POST['Reservation'];
-<<<<<<< HEAD
 			if($model->save()){
                             Yii::app()->user->setFlash('res_update_success', "Reservation is updated successfully!");
                             $this->redirect(array('view','id'=>$model->Reservation_ID));
                         }
-=======
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->Reservation_ID));
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 		}
 
 		$this->render('update',array(
@@ -155,7 +140,6 @@ class ReservationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-<<<<<<< HEAD
             $this->layout='//layouts/column1';
             $model=new Reservation('search');
             $model->unsetAttributes();  // clear any default values
@@ -170,14 +154,10 @@ class ReservationController extends Controller
         public function actionUserAdmin()
 	{
 		$model=new Reservation('search_user');
-=======
-		$model=new Reservation('search');
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Reservation']))
 			$model->attributes=$_GET['Reservation'];
 
-<<<<<<< HEAD
 		$this->render('user_admin',array(
 			'model'=>$model,
 		));
@@ -196,12 +176,6 @@ class ReservationController extends Controller
                     'model'=>$model,
             ));
 	}
-=======
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

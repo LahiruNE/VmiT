@@ -83,13 +83,8 @@ return array(
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
-<<<<<<< HEAD
             // this is used in contact page
             'adminEmail' => 'lahiruepa@gmail.com',
             'lockTime' => strtotime('16:00:00'),    
-=======
-		// this is used in contact page
-		'adminEmail'=>'lahiruepa@gmail.com',
->>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 	),
 );
