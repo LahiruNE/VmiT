@@ -82,11 +82,15 @@ $('.ad-search-form form').change(function(){
                                 type:'POST',
                                 url:$(this).attr('href'),
                                 success:function(data) {
+<<<<<<< HEAD
                                     swal(
                                         'Success!',
                                         'Request Confirmed!',
                                         'success'
                                       );
+=======
+                                    alert(data);
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
                                     $.fn.yiiGridView.update('request-grid'); 
                                 }
                             })

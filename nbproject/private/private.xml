@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/var/www/html/VmiT/protected/views/reservation/_search_history.php</file>
             <file>file:/var/www/html/VmiT/protected/views/reservation/admin.php</file>
             <file>file:/var/www/html/VmiT/themes/blackboot/views/layouts/main.php</file>
@@ -11,6 +12,12 @@
             <file>file:/var/www/html/VmiT/protected/views/reservation/create.php</file>
             <file>file:/var/www/html/VmiT/protected/models/User.php</file>
             <file>file:/var/www/html/VmiT/protected/views/reservation/user_admin.php</file>
+=======
+            <file>file:/var/www/html/VmiT/protected/views/employee/_search.php</file>
+            <file>file:/var/www/html/VmiT/protected/views/userRole/admin.php</file>
+            <file>file:/var/www/html/VmiT/protected/views/userRole/_search.php</file>
+            <file>file:/var/www/html/VmiT/protected/views/employee/admin.php</file>
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
         </group>
     </open-files>
 </project-private>

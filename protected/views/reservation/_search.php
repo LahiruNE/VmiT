@@ -12,6 +12,7 @@
 )); ?>
 
 	<div class="row">
+<<<<<<< HEAD
             <?php echo $form->label($model,'Employee'); ?>
             <?php
                 $this->widget('ext.select2.ESelect2', array(
@@ -81,10 +82,30 @@
                     ),
                 ));                 
                 ?>
+=======
+		<?php echo $form->label($model,'Reservation_ID'); ?>
+		<?php echo $form->textField($model,'Reservation_ID'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'User_ID'); ?>
+		<?php echo $form->textField($model,'User_ID'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'Route_ID'); ?>
+		<?php echo $form->textField($model,'Route_ID'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'Time_ID'); ?>
+		<?php echo $form->textField($model,'Time_ID'); ?>
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Reason_ID'); ?>
+<<<<<<< HEAD
 		<?php
                 $this->widget('ext.select2.ESelect2', array(
                     'model' => $model,
@@ -99,6 +120,9 @@
                     ),
                 ));                 
                 ?> 
+=======
+		<?php echo $form->textField($model,'Reason_ID'); ?>
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 	</div>
 
 	<div class="row">
@@ -106,6 +130,13 @@
 		<?php echo $form->textField($model,'Nearest_City',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
 
+<<<<<<< HEAD
+=======
+	<div class="row buttons">
+		<?php echo CHtml::submitButton('Search'); ?>
+	</div>
+
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

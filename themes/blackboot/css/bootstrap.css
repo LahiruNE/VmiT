@@ -4342,7 +4342,11 @@ input[type="submit"].btn.btn-mini {
   display: block;
   float: left;
   padding: 10px 20px 10px;
+<<<<<<< HEAD
   margin-left: -32px !important;
+=======
+  margin-left: -20px;
+>>>>>>> e4dca117e078be83bf406e9ec79e29e1ddd5544a
   font-size: 20px;
   font-weight: 200;
   color: #777777;
