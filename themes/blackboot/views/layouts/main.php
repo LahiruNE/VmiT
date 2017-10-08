@@ -1,6 +1,4 @@
 <?php
-    date_default_timezone_set('Asia/Colombo');
-    
     Yii::app()->clientscript
             // use it when you need it!
 
@@ -28,9 +26,7 @@
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/sweetalert2/dist/sweetalert2.min.js', CClientScript::POS_END )
-            ->registerScriptFile( 'https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js', CClientScript::POS_END )
             
-
 ?>
 
 <!DOCTYPE html>
@@ -153,7 +149,6 @@
                                                     ), 
                                                 )
                                             ),
-                                            array('label'=>'Dinner', 'url'=>array('#'), 'visible'=>Yii::app()->user->checkAccess('3'),),    
                                             array(
                                             'label' => 'Users <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
@@ -171,7 +166,11 @@
                                                     array('label'=>'Sign Up Requests', 
                                                         'url'=>array('/user/regRequest'), 
                                                         'visible'=>Yii::app()->user->checkAccess('2'),
-                                                    ), 
+                                                    ),
+                                                    array('label'=>'Request Log', 
+                                                        'url'=>array('/requestLog/admin'), 
+                                                        'visible'=>Yii::app()->user->checkAccess('1'),
+                                                    ),
                                                     array('label'=>'Manage Users', 
                                                         'url'=>array('/user/admin'), 
                                                         'visible'=>Yii::app()->user->checkAccess('1'),
@@ -219,7 +218,31 @@
                                             array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                                             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                                     ),
-                            )); ?>   
+                            )); ?>
+                            
+                            <a href="<?php echo $this->createAbsoluteUrl('User/regRequest');?>"><?php echo CHtml::image(Yii::app()->theme->baseUrl.'/img/ico/danger.png','alert', array('id'=>'noti','width'=>'20px','title'=>'Sign Up Requests are detected!', 'style'=>'position:absolute; margin-left:-645px; margin-top:-5px;display:none; cursor:help')); ?></a>                            
+                            
+                            <script>
+                                $(document).ready(function(){
+                                    $.ajax({
+                                        url: "<?php echo $this->createAbsoluteUrl('User/GetCount');?>",
+                                        type: 'POST',
+                                        async:false,
+                                        success: function (response) {
+                                                        if(response==true)
+                                                        {
+                                                            $('#noti').show();
+                                                        }
+                                                        else
+                                                        {
+                                                            $('#noti').hide();
+                                                        }
+                                                   }
+                                    }); 
+                                    
+                                });
+                            </script>
+                            
                         </div>
                     </div><!--/.container-->
 		</nav><!--/nav-->

@@ -108,6 +108,25 @@ class User extends CActiveRecord
             $criteria->compare('Project_ID',$this->Project_ID);
             $criteria->compare('Is_Approved',$this->Is_Approved);
             
+            return new CActiveDataProvider($this, array(
+                    'criteria'=>$criteria,
+            ));
+    }
+    
+    public function search_request()
+    {
+            // @todo Please modify the following code to remove attributes that should not be searched.
+
+            $criteria=new CDbCriteria;
+
+            $criteria->compare('User_ID',$this->User_ID);
+            $criteria->compare('Employee_ID',$this->Employee_ID);
+            $criteria->compare('Username',$this->Username,true);
+            $criteria->compare('Password',$this->Password,true);
+            $criteria->compare('User_Role_ID',$this->User_Role_ID);
+            $criteria->compare('Project_ID',$this->Project_ID);
+            $criteria->compare('Is_Approved',$this->Is_Approved);
+            
             $criteria->compare('Is_Approved',0);
 
             return new CActiveDataProvider($this, array(

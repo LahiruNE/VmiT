@@ -9,6 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'VmiT',
         'theme'=>'blackboot',
+        'timeZone'=>'Asia/Colombo',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -85,6 +86,6 @@ return array(
 	'params'=>array(
             // this is used in contact page
             'adminEmail' => 'lahiruepa@gmail.com',
-            'lockTime' => strtotime('16:00:00'),    
+            'lockTime' => '16:00:00',    
 	),
 );

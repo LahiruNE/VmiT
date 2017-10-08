@@ -106,7 +106,7 @@
 		<?php echo $form->textField($model,'Nearest_City',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
     
-        <div clss="row">
+        <div clss="row" style="margin-left: -15px;">
             <?php echo $form->labelEx($model,'Added_Date');?>
             <?php
             $this->widget('zii.widgets.jui.CJuiDatePicker',array(

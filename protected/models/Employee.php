@@ -29,14 +29,15 @@ class Employee extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Employee_Name, Phone_Number', 'required'),
-			array('Phone_Number', 'numerical', 'integerOnly'=>true),
-			array('Employee_Name', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('Employee_ID, Employee_Name, Phone_Number', 'safe', 'on'=>'search'),
-                        array('Phone_Number','match', 'pattern'=>'/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/', 
-                                'message'=>'Invalid phone number format'),
+                    array('Employee_Name, Phone_Number', 'required'),
+                    array('Phone_Number', 'numerical', 'integerOnly'=>true),
+                    array('Employee_Name', 'length', 'max'=>255),
+                    array('Phone_Number', 'length', 'max'=>13),
+                    // The following rule is used by search().
+                    // @todo Please remove those attributes that should not be searched.
+                    array('Employee_ID, Employee_Name, Phone_Number', 'safe', 'on'=>'search'),
+                    array('Phone_Number','match', 'pattern'=>'/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/', 
+                            'message'=>'Invalid phone number format'),
 		);
 	}
 

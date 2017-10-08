@@ -28,7 +28,7 @@ class ReservationController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','ViewAdmin','AjaxDelete'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,11 +51,18 @@ class ReservationController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+            $this->render('view',array(
+                'model'=>$this->loadModel($id),
+            ));
 	}
-
+        
+        public function actionViewAdmin($id)
+	{
+            $this->render('view_admin',array(
+                'model'=>$this->loadModel($id),
+            ));
+	}
+        
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -123,6 +130,14 @@ class ReservationController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+        
+        public function actionAjaxDelete()
+	{
+            if(isset($_POST['id']))
+            {
+                $this->loadModel($_POST['id'])->delete();
+            }  
+	}
 
 	/**
 	 * Lists all models.
@@ -139,8 +154,7 @@ class ReservationController extends Controller
 	 * Manages all models.
 	 */
 	public function actionAdmin()
-	{
-            $this->layout='//layouts/column1';
+	{            
             $model=new Reservation('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['Reservation']))
@@ -153,21 +167,19 @@ class ReservationController extends Controller
         
         public function actionUserAdmin()
 	{
-		$model=new Reservation('search_user');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Reservation']))
-			$model->attributes=$_GET['Reservation'];
+            $model=new Reservation('search');
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['Reservation']))
+                    $model->attributes=$_GET['Reservation'];
 
-		$this->render('user_admin',array(
-			'model'=>$model,
-		));
+            $this->render('user_admin',array(
+                    'model'=>$model,
+            ));
 	}
         
         public function actionHistory()
-	{
-            $this->layout='//layouts/column1';
-            
-            $model=new Reservation('history');
+	{            
+            $model=new Reservation('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['Reservation']))
                     $model->attributes=$_GET['Reservation'];

@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','RegRequest','AcceptRequest'),
+				'actions'=>array('admin','delete','RegRequest','AcceptRequest','AjaxDeny','AjaxDelete','GetCount'),
 				'roles'=>array('1'),
 			),
 			array('deny',  // deny all users
@@ -131,6 +131,30 @@ class UserController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+        
+        public function actionAjaxDelete()
+	{
+            if(isset($_POST['id']))
+            {
+                $this->loadModel($_POST['id'])->delete();
+            }  
+	}
+        
+        public function actionGetCount()
+        {
+            $crit = new CDbCriteria;
+            $crit->condition = 'Is_Approved=0';
+            $count = User::model()->findAll($crit);
+            
+            if(!empty($count))
+            {
+                echo true;
+            }
+            else
+            {
+                echo false;
+            }
+        }
 
 	/**
 	 * Lists all models.
@@ -159,9 +183,7 @@ class UserController extends Controller
 	}
         
         public function actionRegRequest()
-	{
-            $this->layout='//layouts/column1';
-                                   
+	{                                   
             $model=new User('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['User']))
@@ -172,20 +194,45 @@ class UserController extends Controller
             ));
 	}
         
-        public function actionAcceptRequest($id)
-        {            
-            $model= User::model()->findByPk($id);
-            
-            $model->Is_Approved=1;
-            
-            if($model->update())
+        public function actionAcceptRequest()
+        {   
+            if(isset($_POST['id']))
             {
-                echo 'Successfully Done!';
-            }else
+                $model= User::model()->findByPk($_POST['id']);
+            
+                $model->Is_Approved=1;
+
+                $log = new RequestLog;
+                $log->attributes = $model->attributes;
+                $log->Status = '1';
+                $log->Done_Date = date("Y-m-d G:i:s");
+
+                if($log->save())
+                {
+                    $model->update();
+                }
+                
+            }         
+        }
+        
+        public function actionAjaxDeny()
+        {
+            if(isset($_POST['id']))
             {
-                echo 'Operation Failed!';
-            }
-                        
+                $userData = $this->loadModel($_POST['id']);
+                
+                $log = new RequestLog;
+                $log->attributes = $userData->attributes;
+                $log->Status = '0';
+                $log->Remark = $_POST['remark'];
+                $log->Done_Date = date("Y-m-d G:i:s");
+                
+                if($log->save())
+                {
+                    $userData->delete();
+                }
+                
+            }  
         }
 
 	/**

@@ -114,18 +114,26 @@ class Reservation extends CActiveRecord
         $user = Yii::app()->user->id;
 
         $criteria=new CDbCriteria;
+        $criteria->together = true;
+        $criteria->with = array('user');
 
-        $criteria->condition = 'User_ID ='.$user;
-        $criteria->compare('Reservation_ID',$this->Reservation_ID);
-        $criteria->compare('User_ID',$this->User_ID);
-        $criteria->compare('Route_ID',$this->Route_ID);
-        $criteria->compare('Time_ID',$this->Time_ID);
-        $criteria->compare('Reason_ID',$this->Reason_ID);
-        $criteria->compare('Nearest_City',$this->Nearest_City,true);
-        $criteria->compare('Added_Date',$this->Added_Date,true);
+        $criteria->condition = 't.User_ID ='.$user;
+        $criteria->compare('user.Employee_ID',$this->Employee);
+        $criteria->compare('user.Project_ID',$this->Proj);
+        $criteria->compare('t.Reservation_ID',$this->Reservation_ID);
+        $criteria->compare('t.User_ID',$this->User_ID);
+        $criteria->compare('t.Route_ID',$this->Route_ID);
+        $criteria->compare('t.Time_ID',$this->Time_ID);
+        $criteria->compare('t.Reason_ID',$this->Reason_ID);
+        $criteria->compare('t.Nearest_City',$this->Nearest_City,true);
+        $criteria->compare('t.Added_Date',$this->Added_Date,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'Added_Date DESC',
+                'multiSort'=>true,
+            ),
         ));
     }
 
@@ -153,27 +161,37 @@ class Reservation extends CActiveRecord
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'Time_ID ASC',
+                'multiSort'=>true,
+            ),
         ));
     }
 
     public function search_history()//all history
     {
             // @todo Please modify the following code to remove attributes that should not be searched.
-        $user = Yii::app()->user->id;
 
         $criteria=new CDbCriteria;
-
-        $criteria->condition = 'User_ID ='.$user;
-        $criteria->compare('Reservation_ID',$this->Reservation_ID);
-        $criteria->compare('User_ID',$this->User_ID);
-        $criteria->compare('Route_ID',$this->Route_ID);
-        $criteria->compare('Time_ID',$this->Time_ID);
-        $criteria->compare('Reason_ID',$this->Reason_ID);
-        $criteria->compare('Nearest_City',$this->Nearest_City,true);
-        $criteria->compare('Added_Date',$this->Added_Date,true);
+        $criteria->together = true;
+        $criteria->with = array('user');
+        
+        $criteria->compare('user.Employee_ID',$this->Employee);
+        $criteria->compare('user.Project_ID',$this->Proj);
+        $criteria->compare('t.Reservation_ID',$this->Reservation_ID);
+        $criteria->compare('t.User_ID',$this->User_ID);
+        $criteria->compare('t.Route_ID',$this->Route_ID);
+        $criteria->compare('t.Time_ID',$this->Time_ID);
+        $criteria->compare('t.Reason_ID',$this->Reason_ID);
+        $criteria->compare('t.Nearest_City',$this->Nearest_City,true);
+        $criteria->compare('t.Added_Date',$this->Added_Date,true);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>array(
+                'defaultOrder'=>'Reservation_ID DESC',
+                'multiSort'=>true,
+            ),
         ));
     
     }

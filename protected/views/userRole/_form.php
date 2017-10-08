@@ -17,8 +17,6 @@
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'User_Role_Name'); ?>
 		<?php echo $form->textField($model,'User_Role_Name',array('size'=>32,'maxlength'=>32)); ?>

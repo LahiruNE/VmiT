@@ -1,5 +1,16 @@
 <script>
     $(document).ready(function(){
+        <?php 
+        if($newUserModel->hasErrors())
+        { ?>
+            signupPrompt();
+        <?php }
+
+        if($loginFormModel->hasErrors())
+        { ?>
+            loginPrompt();
+        <?php }?>
+        
         $('#prompt').on('click',function(){
             $('.signup_prompt').hide();
             $('.signup_form').show();           
@@ -19,7 +30,11 @@
         $('#word').hide(); 
         $('.login_form').hide(); 
     }
+
 </script>
+
+
+
 
 <table style="width: 100%">
     <tr>

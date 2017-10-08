@@ -1,6 +1,4 @@
 <?php
-    date_default_timezone_set('Asia/Colombo');
-    
     Yii::app()->clientscript
             // use it when you need it!
 

@@ -3,12 +3,19 @@
 /* @var $model Reservation */
 /* @var $form CActiveForm */
 $time = date("G:i:s");
+$paramTime = Yii::app()->params['lockTime'];
+$timezone = Yii::app()->timeZone;
+
+$lock = new DateTime($paramTime , new DateTimeZone($timezone));
+$lockTime = $lock->getTimestamp();
+
+//echo date_default_timezone_get();echo '<br>'; echo "now : ". strtotime($time); echo "lock :". $lockTime;exit;
 ?>
 
 
 
 <?php
-if(strtotime($time)>Yii::app()->params['lockTime'])
+if(strtotime($time)>$lockTime)
 { ?>
     <div class="timeErr">
         <span>You cannot either add or update reservations after 4p.m.</span>
@@ -20,10 +27,10 @@ if(strtotime($time)>Yii::app()->params['lockTime'])
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'reservation-form',
-	'enableClientValidation'=>true,
-        'clientOptions'=>array(
-            'validateOnSubmit'=>true,
-        ),
+	//'enableClientValidation'=>true,
+//        'clientOptions'=>array(
+//            'validateOnSubmit'=>true,
+//        ),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -52,7 +59,7 @@ if(strtotime($time)>Yii::app()->params['lockTime'])
                     'htmlOptions' => array(
                         'prompt' => '- Select -',
                         'style' => 'width:210px', 
-                        'disabled'=>(strtotime($time)>Yii::app()->params['lockTime'])?'disabled':false
+                        'disabled'=>(strtotime($time)>$lockTime)?'disabled':false
                     ),
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
@@ -73,7 +80,7 @@ if(strtotime($time)>Yii::app()->params['lockTime'])
                         'prompt' => '- Select -',
                         'style' => 'width:210px',
                         'onchange' => 'showReason(this.value)',
-                        'disabled'=>(strtotime($time)>Yii::app()->params['lockTime'])?'disabled':false
+                        'disabled'=>(strtotime($time)>$lockTime)?'disabled':false
                     ),
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
@@ -92,7 +99,7 @@ if(strtotime($time)>Yii::app()->params['lockTime'])
                     'htmlOptions' => array(
                         'prompt' => '- Select -',
                         'style' => 'width:210px', 
-                        'disabled'=>(strtotime($time)>Yii::app()->params['lockTime'])?'disabled':false
+                        'disabled'=>(strtotime($time)>$lockTime)?'disabled':false
                     ),
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
@@ -104,11 +111,11 @@ if(strtotime($time)>Yii::app()->params['lockTime'])
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nearest_City'); ?>
-		<?php echo $form->textField($model,'Nearest_City',array('size'=>32,'maxlength'=>32, 'disabled'=>(strtotime($time)>Yii::app()->params['lockTime'])?'disabled':false)); ?>		
+		<?php echo $form->textField($model,'Nearest_City',array('size'=>32,'maxlength'=>32, 'disabled'=>(strtotime($time)>$lockTime)?'disabled':false)); ?>		
 	</div> 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('disabled'=>(strtotime($time)>Yii::app()->params['lockTime'])?'disabled':false)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('disabled'=>(strtotime($time)>$lockTime)?'disabled':false)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
