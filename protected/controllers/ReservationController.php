@@ -27,24 +27,20 @@ class ReservationController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','ViewAdmin','AjaxDelete'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','userAdmin','AjaxDelete','index','view','ViewAdmin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','history', 'userAdmin'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete','history') ,
+				'roles'=>array(Yii::app()->params['sharedService'], Yii::app()->params['admin']),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
 	}
-
+        
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -80,8 +76,9 @@ class ReservationController extends Controller
                     $model->User_ID = Yii::app()->user->id;
                     $model->Added_Date = date("Y-m-d G:i:s");
 
-                    if($model->save()){
-                        Yii::app()->user->setFlash('res_success', "Reservation is added successfully!");
+                    if($model->save())
+                    {
+                        Yii::app()->user->setFlash('success', "added successfully!");
                         $this->redirect(array('view','id'=>$model->Reservation_ID));
                     }
 		}
@@ -106,8 +103,9 @@ class ReservationController extends Controller
 		if(isset($_POST['Reservation']))
 		{
 			$model->attributes=$_POST['Reservation'];
-			if($model->save()){
-                            Yii::app()->user->setFlash('res_update_success', "Reservation is updated successfully!");
+			if($model->save())
+                        {
+                            Yii::app()->user->setFlash('update_success', "updated successfully!");
                             $this->redirect(array('view','id'=>$model->Reservation_ID));
                         }
 		}

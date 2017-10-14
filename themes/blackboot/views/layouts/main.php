@@ -51,7 +51,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/prettyPhoto.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/responsive.css" />
-<!-- Le fav and touch icons -->
 
 <style>
     #list a:hover{
@@ -124,7 +123,7 @@
                                             array(
                                             'label' => 'Transport <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('3'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -142,17 +141,19 @@
                                                     array(
                                                         'label' => 'Current Reservations',
                                                         'url' => array('/reservation/admin'),
+                                                        'visible' => Yii::app()->user->checkAccess(Yii::app()->params['admin']),
                                                     ), 
                                                     array(
                                                         'label' => 'Reservation History',
                                                         'url' => array('/reservation/history'),
+                                                        'visible' => Yii::app()->user->checkAccess(Yii::app()->params['admin']),
                                                     ), 
                                                 )
                                             ),
                                             array(
                                             'label' => 'Users <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -161,26 +162,26 @@
                                             'items' => array(
                                                     array('label'=>'My Account', 
                                                         'url'=>array('/user/view&id='.Yii::app()->user->getId()), 
-                                                        'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                                     ),
                                                     array('label'=>'Sign Up Requests', 
                                                         'url'=>array('/user/regRequest'), 
-                                                        'visible'=>Yii::app()->user->checkAccess('2'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                                     ),
                                                     array('label'=>'Request Log', 
                                                         'url'=>array('/requestLog/admin'), 
-                                                        'visible'=>Yii::app()->user->checkAccess('1'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                                     ),
                                                     array('label'=>'Manage Users', 
                                                         'url'=>array('/user/admin'), 
-                                                        'visible'=>Yii::app()->user->checkAccess('1'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                                     ),
                                                 )
                                             ),                                            
                                             array(
                                             'label' => 'Master Data <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('1'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -222,6 +223,8 @@
                             
                             <a href="<?php echo $this->createAbsoluteUrl('User/regRequest');?>"><?php echo CHtml::image(Yii::app()->theme->baseUrl.'/img/ico/danger.png','alert', array('id'=>'noti','width'=>'20px','title'=>'Sign Up Requests are detected!', 'style'=>'position:absolute; margin-left:-645px; margin-top:-5px;display:none; cursor:help')); ?></a>                            
                             
+                            <?php if(Yii::app()->user->checkAccess(Yii::app()->params['sharedService']))
+                            {?>
                             <script>
                                 $(document).ready(function(){
                                     $.ajax({
@@ -242,6 +245,7 @@
                                     
                                 });
                             </script>
+                            <?php }?>
                             
                         </div>
                     </div><!--/.container-->
@@ -296,20 +300,37 @@
 </body>
 </html>
 <?php 
-    if(Yii::app()->user->hasFlash('res_success'))
+    if(Yii::app()->user->hasFlash('success'))
     { 
         echo "<script>swal(
             'Success!',
-            'Your reservation is added!',
+            'Added Successfully.',
             'success'
           )</script>";                        
     }
-    if(Yii::app()->user->hasFlash('res_update_success'))
+    if(Yii::app()->user->hasFlash('update_success'))
     { 
         echo "<script>swal(
             'Success!',
-            'Your reservation is updated!',
+            'Updated Successfully.',
             'success'
           )</script>";                        
     }
+    
+    if(Yii::app()->user->hasFlash('user_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'New user added and submitted for approval successfully.',
+            'success'
+          )</script>";                        
+    }
+    if(Yii::app()->user->hasFlash('user_update_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'User details are updated successfully.',
+            'success'
+          )</script>";                        
+    }   
 ?>

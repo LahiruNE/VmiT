@@ -1,3 +1,44 @@
+<script>
+    function userDelete(emp_id)
+    {
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then(function () {
+              $.ajax({
+                url: "<?php echo CController::createUrl('AjaxDelete');?>",
+                type: 'POST',
+                async:false,
+                data: {id:emp_id},
+                success: function (response) {
+                                if(response==0)
+                                {
+                                    swal(
+                                        'Error!',
+                                        'Unable to delete. This employee ID is currently in use',
+                                        'error'
+                                      );
+                                    
+                                }
+                                else
+                                {
+                                    swal(
+                                        'Deleted!',
+                                        'Employee has been deleted.',
+                                        'success'
+                                      ).then(function(){location.reload(); });
+                                }                               
+                           }
+               });   
+          });
+    }
+</script>
+
 <?php
 /* @var $this EmployeeController */
 /* @var $model Employee */
@@ -60,7 +101,7 @@ $('.ad-search-form form').change(function(){
             'htmlOptions' => array('width'=>'130px'),
             //'deleteConfirmation'=>'Do you want to delete this record?',
             //'afterDelete'=>'function(link,success,data){if(success) $("#statusMsg").html(data); }',
-            'template' => '{view}&nbsp;&nbsp;&nbsp;{update}&nbsp;&nbsp;&nbsp;{delete}',
+            'template' => '{view}&nbsp;&nbsp;&nbsp;{update}&nbsp;&nbsp;&nbsp;{del}',
             'buttons' => array(
                 'view' => array
                 (
@@ -75,13 +116,13 @@ $('.ad-search-form form').change(function(){
                     'imageUrl'=>Yii::app()->theme->baseUrl.'/img/ico/edit.png',
                     'options'=>array('title'=>'Edit'),
                 ),
-                'delete' => array
+                'del' => array
                 (
                     'label'=>'Delete',
                     'imageUrl'=>Yii::app()->theme->baseUrl.'/img/ico/delete.png',
                     'options'=>array('title'=>'Delete'),
 //                        'visible'=>'$data->score > 0',
-//                        'click'=>'rejectRequest($data->User_ID)',
+                    'click'=>'function(){userDelete($(this).parent().parent().children(":first-child").text())}',
                 ),
             )
         ),

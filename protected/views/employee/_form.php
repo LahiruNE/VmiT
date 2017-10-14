@@ -16,6 +16,12 @@
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'Employee_ID'); ?>
+		<?php echo $form->textField($model,'Employee_ID',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'Employee_ID'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Employee_Name'); ?>

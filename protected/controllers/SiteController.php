@@ -33,6 +33,40 @@ class SiteController extends Controller
         // using the default layout 'protected/views/layouts/main.php'
         $this->render('index');
     }
+    
+    public function actionTest()
+    {
+        
+//        $cron = new Crontab('my_crontab');
+//        
+//        $cron->addApplicationJob('yiicmd', 'mail', array(), '30','22');
+//        
+//        $cron->saveCronFile();
+//        $cron->saveToCrontab(); 
+        
+        echo Yii::app()->getBaseUrl();        
+        
+        exit;
+        $to = "lahiruepa@gmail.com";
+        $subject = "This is subject";
+
+        $message = "<b>This is HTML message.</b>";
+        $message .= "<h1>This is headline.</h1>";
+
+        $header = "From:abc@somedomain.com \r\n";
+        $header .= "Cc:afgh@somedomain.com \r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type: text/html\r\n";
+
+        $retval = mail ($to,$subject,$message,$header);
+
+        if( $retval == true ) {
+           echo "Message sent successfully...";
+        }else {
+           echo "Message could not be sent...";
+        }
+         
+    }
 
     /**
      * This is the action to handle external exceptions.
@@ -100,7 +134,7 @@ class SiteController extends Controller
         {
             $model->attributes=$_POST['User'];
             $model->Is_Approved=0;
-            $model->User_Role_ID=3;
+            $model->User_Role_ID=Yii::app()->params['staff'];
 
             $notHashedPassword = $_POST['User']['Password'];
 
@@ -112,7 +146,10 @@ class SiteController extends Controller
 
             if($model->save())
             {
-                //echo '<script>alret("Successfully Registered. Your acount is submitted for approval.");</script>';
+                Yii::app()->user->setFlash('user_success', "User is added successfully!");
+                $model->unsetAttributes();
+                $model->Retype_Password = NULL;
+                User::model()->sendMail();
             }                       
         }
 

@@ -4,6 +4,7 @@
 
             ->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
             ->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
+            ->registerCssFile( Yii::app()->theme->baseUrl . '/sweetalert2/dist/sweetalert2.min.css' )
             ->registerCoreScript( 'jquery' )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
@@ -24,9 +25,10 @@
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/jquery.prettyPhoto.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
-
-		
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/sweetalert2/dist/sweetalert2.min.js', CClientScript::POS_END )
+            
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -97,9 +99,8 @@
         </div><!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner" style="border-radius:0px !important;">
-                    <div class="container">                       
-
-                        <div class="collapse navbar-collapse navbar-right" style="margin-right: 62px !important;">      
+                    <div class="container">
+                        <div class="collapse navbar-collapse navbar-right" style="margin-right: 30px !important;">      
                             <?php $this->widget('zii.widgets.CMenu',array(
                                     'encodeLabel' => false,
                                     'submenuHtmlOptions' => array(
@@ -113,7 +114,7 @@
                                             array(
                                             'label' => 'Transport <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('3'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -121,16 +122,29 @@
                                             'itemOptions' => array('class'=>'dropdown'),
                                             'items' => array(
                                                     array(
-                                                        'label' => 'Reservation',
+                                                        'label' => 'Make Reservation',
+                                                        'url' => array('/reservation/create'),
+                                                    ),  
+                                                    array(
+                                                        'label' => 'My Reservations',
+                                                        'url' => array('/reservation/userAdmin'),
+                                                    ), 
+                                                    array(
+                                                        'label' => 'Current Reservations',
                                                         'url' => array('/reservation/admin'),
-                                                    ),                                                    
+                                                        'visible' => Yii::app()->user->checkAccess(Yii::app()->params['admin']),
+                                                    ), 
+                                                    array(
+                                                        'label' => 'Reservation History',
+                                                        'url' => array('/reservation/history'),
+                                                        'visible' => Yii::app()->user->checkAccess(Yii::app()->params['admin']),
+                                                    ), 
                                                 )
                                             ),
-                                            array('label'=>'Dinner', 'url'=>array('#'), 'visible'=>Yii::app()->user->checkAccess('3'),),    
                                             array(
                                             'label' => 'Users <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -139,22 +153,26 @@
                                             'items' => array(
                                                     array('label'=>'My Account', 
                                                         'url'=>array('/user/view&id='.Yii::app()->user->getId()), 
-                                                        'visible'=>Yii::app()->user->checkAccess('3') || Yii::app()->user->checkAccess('2'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['admin']) || Yii::app()->user->checkAccess(Yii::app()->params['staff']),
                                                     ),
                                                     array('label'=>'Sign Up Requests', 
                                                         'url'=>array('/user/regRequest'), 
-                                                        'visible'=>Yii::app()->user->checkAccess('2'),
-                                                    ), 
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
+                                                    ),
+                                                    array('label'=>'Request Log', 
+                                                        'url'=>array('/requestLog/admin'), 
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
+                                                    ),
                                                     array('label'=>'Manage Users', 
                                                         'url'=>array('/user/admin'), 
-                                                        'visible'=>Yii::app()->user->checkAccess('1'),
+                                                        'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                                     ),
                                                 )
                                             ),                                            
                                             array(
                                             'label' => 'Master Data <i class="fa fa-angle-down"></i>',
                                             'url' => '#',
-                                            'visible'=>Yii::app()->user->checkAccess('1'),
+                                            'visible'=>Yii::app()->user->checkAccess(Yii::app()->params['sharedService']),
                                             'linkOptions'=> array(
                                                 'class' => 'dropdown-toggle',
                                                 'data-toggle' => 'dropdown',
@@ -186,13 +204,40 @@
                                                         'url' => array('/reason/admin'),
                                                     ),
                                                 )
-                                            ),          
+                                            ),    
                                             array('label'=>'About Us', 'url'=>array('/site/page', 'view'=>'about')),
                                             array('label'=>'Contact Us', 'url'=>array('/site/contact')),
                                             array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                                             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                                     ),
-                            )); ?>   
+                            )); ?>
+                            
+                            <a href="<?php echo $this->createAbsoluteUrl('User/regRequest');?>"><?php echo CHtml::image(Yii::app()->theme->baseUrl.'/img/ico/danger.png','alert', array('id'=>'noti','width'=>'20px','title'=>'Sign Up Requests are detected!', 'style'=>'position:absolute; margin-left:-645px; margin-top:-5px;display:none; cursor:help')); ?></a>                            
+                            
+                            <?php if(Yii::app()->user->checkAccess(Yii::app()->params['sharedService']))
+                            {?>
+                            <script>
+                                $(document).ready(function(){
+                                    $.ajax({
+                                        url: "<?php echo $this->createAbsoluteUrl('User/GetCount');?>",
+                                        type: 'POST',
+                                        async:false,
+                                        success: function (response) {
+                                                        if(response==true)
+                                                        {
+                                                            $('#noti').show();
+                                                        }
+                                                        else
+                                                        {
+                                                            $('#noti').hide();
+                                                        }
+                                                   }
+                                    }); 
+                                    
+                                });
+                            </script>
+                            <?php }?>
+                            
                         </div>
                     </div><!--/.container-->
 		</nav><!--/nav-->
@@ -245,9 +290,43 @@
         </footer>
 </body>
 </html>
+<?php 
+    if(Yii::app()->user->hasFlash('res_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'Your reservation is added.',
+            'success'
+          )</script>";                        
+    }
+    if(Yii::app()->user->hasFlash('res_update_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'Your reservation is updated successfully.',
+            'success'
+          )</script>";                        
+    }
+    if(Yii::app()->user->hasFlash('user_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'New user added and submitted for approval successfully.',
+            'success'
+          )</script>";                        
+    }
+    if(Yii::app()->user->hasFlash('user_update_success'))
+    { 
+        echo "<script>swal(
+            'Success!',
+            'User details are updated successfully.',
+            'success'
+          )</script>";                        
+    }
+?>
 
 <style>
     .navbar .nav {
-        margin: 0 440px 0 0 !important;
+        margin: 0 430px 0 0 !important;
     }
 </style>

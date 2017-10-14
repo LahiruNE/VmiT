@@ -29,10 +29,10 @@ class Employee extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-                    array('Employee_Name, Phone_Number', 'required'),
+                    array('Employee_ID, Employee_Name, Phone_Number', 'required'),
                     array('Phone_Number', 'numerical', 'integerOnly'=>true),
-                    array('Employee_Name', 'length', 'max'=>255),
-                    array('Phone_Number', 'length', 'max'=>13),
+                    array('Employee_ID, Employee_Name', 'length', 'max'=>255),
+                    array('Phone_Number', 'length', 'max'=>10),
                     // The following rule is used by search().
                     // @todo Please remove those attributes that should not be searched.
                     array('Employee_ID, Employee_Name, Phone_Number', 'safe', 'on'=>'search'),
@@ -59,7 +59,7 @@ class Employee extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'Employee_ID' => 'Employee',
+			'Employee_ID' => 'Employee ID',
 			'Employee_Name' => 'Employee Name',
 			'Phone_Number' => 'Phone Number',
 		);

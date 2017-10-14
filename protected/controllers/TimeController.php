@@ -28,16 +28,8 @@ class TimeController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('index','view','create','update','admin','delete', 'AjaxDelete'),
+				'roles'=>array(Yii::app()->params['sharedService']),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -71,7 +63,10 @@ class TimeController extends Controller
 		{
 			$model->attributes=$_POST['Time'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->Time_ID));
+                        {
+                            Yii::app()->user->setFlash('success', "added successfully!");
+                            $this->redirect(array('view','id'=>$model->Time_ID));
+                        }
 		}
 
 		$this->render('create',array(
@@ -95,7 +90,10 @@ class TimeController extends Controller
 		{
 			$model->attributes=$_POST['Time'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->Time_ID));
+                        {
+                            Yii::app()->user->setFlash('update_success', "updated successfully!");
+                            $this->redirect(array('view','id'=>$model->Time_ID));
+                        }
 		}
 
 		$this->render('update',array(
@@ -115,6 +113,25 @@ class TimeController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+        
+        public function actionAjaxDelete()
+	{
+            if(isset($_POST['id']))
+            {
+                try 
+                {
+                    $this->loadModel($_POST['id'])->delete();
+                    echo 1;
+                }
+
+                  //catch exception
+                catch(Exception $e) 
+                {
+                    echo 0;
+                }               
+                
+            }  
 	}
 
 	/**

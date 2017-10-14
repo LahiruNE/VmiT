@@ -1,0 +1,1 @@
+30 22 * * * php /var/www/html/VmiT/yiicmd.php mail

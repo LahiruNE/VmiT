@@ -26,6 +26,7 @@
                     'options'=>array(
                         'hourMax'=>'24',
                         'minuteMax'=>'60',
+                        'timeFormat'=>'hh:mm:ss'
                     ) // jquery plugin options
                 ));
             ?>

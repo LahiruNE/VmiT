@@ -33,7 +33,7 @@ class UserController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','RegRequest','AcceptRequest','AjaxDeny','AjaxDelete','GetCount'),
-				'roles'=>array('1'),
+				'roles'=>array(Yii::app()->params['sharedService']),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -74,7 +74,11 @@ class UserController extends Controller
                             $model->Retype_Password = md5($_POST['User']['Retype_Password']);
                         }
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->User_ID));
+                        {
+                            Yii::app()->user->setFlash('user_success', "User is added successfully!");
+                            User::model()->sendMail();
+                            $this->redirect(array('view','id'=>$model->User_ID));
+                        }
 		}
 
 		$this->render('create',array(
@@ -110,7 +114,10 @@ class UserController extends Controller
                             $model->Retype_Password = md5($_POST['User']['Retype_Password']);
                         }
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->User_ID));
+                        {
+                            Yii::app()->user->setFlash('user_update_success', "User details is updated successfully!");
+                            $this->redirect(array('view','id'=>$model->User_ID));
+                        }
 		}
 
 		$this->render('update',array(

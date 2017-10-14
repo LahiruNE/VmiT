@@ -28,8 +28,8 @@ class ProjectController extends Controller
 	{
             return array(
                 array('allow',  // allow all users to perform 'index' and 'view' actions
-                        'actions'=>array('index','view','create','update','admin','delete'),
-                        'roles'=>array('1'),
+                        'actions'=>array('index','view','create','update','admin','delete','AjaxDelete'),
+                        'roles'=>array(Yii::app()->params['sharedService']),
                 ),
                 array('deny',  // deny all users
                         'users'=>array('*'),
@@ -67,7 +67,10 @@ class ProjectController extends Controller
                         $model->End_Date=NULL;
                     }
                     if($model->save())
-                            $this->redirect(array('view','id'=>$model->Project_ID));
+                    {
+                        Yii::app()->user->setFlash('project_success', "Project is added successfully!");
+                        $this->redirect(array('view','id'=>$model->Project_ID));
+                    }
 		}
 
 		$this->render('create',array(
@@ -91,7 +94,10 @@ class ProjectController extends Controller
 		{
 			$model->attributes=$_POST['Project'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->Project_ID));
+                        {
+                            Yii::app()->user->setFlash('project_update_success', "Reservation is updated successfully!");
+                            $this->redirect(array('view','id'=>$model->Project_ID));
+                        }
 		}
 
 		$this->render('update',array(
@@ -111,6 +117,25 @@ class ProjectController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+        
+        public function actionAjaxDelete()
+	{
+            if(isset($_POST['id']))
+            {
+                try 
+                {
+                    $this->loadModel($_POST['id'])->delete();
+                    echo 1;
+                }
+
+                  //catch exception
+                catch(Exception $e) 
+                {
+                    echo 0;
+                }               
+                
+            }  
 	}
 
 	/**

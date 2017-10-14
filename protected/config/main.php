@@ -21,6 +21,7 @@ return array(
                 'application.extensions.galleria.*',
                 'application.extensions.select2.*',
                 'application.extensions.YiiDateTimePicker.*',
+                'application.extensions.crontab.*',
 	),
 
 	'modules'=>array(
@@ -86,6 +87,9 @@ return array(
 	'params'=>array(
             // this is used in contact page
             'adminEmail' => 'lahiruepa@gmail.com',
-            'lockTime' => '16:00:00',    
+            'lockTime' => '16:00:00',
+            'sharedService'=> '1',
+            'staff' => '3',
+            'admin' => '4'
 	),
 );

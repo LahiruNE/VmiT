@@ -37,7 +37,7 @@ class RequestLog extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('Employee_ID, Username, User_Role_ID, Status', 'required'),
-			array('Employee_ID, User_Role_ID, Project_ID, Status', 'numerical', 'integerOnly'=>true),
+			array('User_Role_ID, Project_ID, Status', 'numerical', 'integerOnly'=>true),
 			array('Username', 'length', 'max'=>32),
 			array('Remark', 'length', 'max'=>1024),
 			array('Done_Date', 'safe'),
