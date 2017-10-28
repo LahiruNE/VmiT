@@ -1,7 +1,7 @@
 <?php
     Yii::app()->clientscript
             // use it when you need it!
-
+            
             ->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
             ->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
             ->registerCssFile( Yii::app()->theme->baseUrl . '/sweetalert2/dist/sweetalert2.min.css' )
@@ -26,8 +26,16 @@
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/respond.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/js/wow.min.js', CClientScript::POS_END )
             ->registerScriptFile( Yii::app()->theme->baseUrl . '/sweetalert2/dist/sweetalert2.min.js', CClientScript::POS_END )
-            
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/tableExport.js', CClientScript::POS_END )
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/jquery.base64.js', CClientScript::POS_END )
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/html2canvas.js', CClientScript::POS_END )
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/jspdf/libs/sprintf.js', CClientScript::POS_END )
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/jspdf/libs/base64.js', CClientScript::POS_END )
+            ->registerScriptFile( Yii::app()->theme->baseUrl . '/tableExport/jspdf/jspdf.js', CClientScript::POS_END )
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -68,6 +76,8 @@
         padding: 0 !important;
     }
 </style>
+
+
 </head>
 
 <body>

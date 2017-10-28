@@ -18,6 +18,16 @@ class ReservationController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
+        
+        public function behaviors()
+        {
+            return array(
+                'eexcelview'=>array(
+                    'class'=>'ext.eexcelview.EExcelBehavior',
+                ),
+            );
+        }    
+        
 
 	/**
 	 * Specifies the access control rules.
@@ -28,7 +38,7 @@ class ReservationController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','userAdmin','AjaxDelete','index','view','ViewAdmin'),
+				'actions'=>array('create','update','userAdmin','AjaxDelete','index','view','ViewAdmin','CurrentRes', 'HistoryRes', 'UserRes'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -40,6 +50,141 @@ class ReservationController extends Controller
 			),
 		);
 	}
+        
+        public function actionCurrentRes()
+        {
+            $todayDate = date("Y-m-d");    
+            $startOfDay = $todayDate . ' 00:00:00'; 
+            $endOfDay = $todayDate . ' 23:59:59'; 
+
+            $criteria=new CDbCriteria;
+            $criteria->addBetweenCondition('Added_Date', $startOfDay , $endOfDay );
+            $model = Reservation::model()->search($criteria);
+            
+            $count = count($model);
+            $date = date("Y-m-d G:i:s");
+            $user = Yii::app()->user->employee;
+
+                // Export it
+            $this->toExcel($model,
+                array(                    
+                    array(
+                            'name' => 'Reservation_ID',
+                            'header' => 'Reservation ID',
+                            'footer'=>'Total pending reservations : '.$count, 
+                    ),
+                    'user.Username',                    
+                    array(
+                            'name' => 'route.Route_Description',
+                            'header' => 'Route Description',
+                            'footer'=>'Downloaded date : '.$date, 
+                    ),
+                    'time.Time',                    
+                    array(
+                            'name' => 'reason.Reason_Description',
+                            'header' => 'Reason Description',
+                            'footer'=>'Downloaded by : '.$user, 
+                    ),
+                    'Nearest_City',
+                    'Added_Date',
+                    'user.employee.Employee_Name',
+                    'user.employee.Phone_Number',
+                    'user.project.Project_Name'
+                ),
+                'Pending_Reservation',
+                array(
+                    'creator' => 'VmiT',
+                ),
+                'Excel5'
+            );
+        }
+        
+        public function actionHistoryRes()
+        {
+            // Load data (scoped)
+            $model = Reservation::model()->findAll();
+            $count = count($model);
+            $date = date("Y-m-d G:i:s");
+            $user = Yii::app()->user->employee;
+                // Export it
+            $this->toExcel($model,
+                array(                    
+                    array(
+                            'name' => 'Reservation_ID',
+                            'header' => 'Reservation ID',
+                            'footer'=>'Total reservations(whole time) : '.$count, 
+                    ),
+                    'user.Username',                    
+                    array(
+                            'name' => 'route.Route_Description',
+                            'header' => 'Route Description',
+                            'footer'=>'Downloaded date : '.$date, 
+                    ),
+                    'time.Time',                    
+                    array(
+                            'name' => 'reason.Reason_Description',
+                            'header' => 'Reason Description',
+                            'footer'=>'Downloaded by : '.$user, 
+                    ),
+                    'Nearest_City',
+                    'Added_Date',
+                    'user.employee.Employee_Name',
+                    'user.employee.Phone_Number',
+                    'user.project.Project_Name'
+                ),
+                'Reservation_History',
+                array(
+                    'creator' => 'VmiT',
+                ),
+                'Excel5'
+            );
+        }
+        
+        public function actionUserRes()
+        {
+            $user = Yii::app()->user->id;
+            
+            $criteria=new CDbCriteria;
+            $criteria->condition = 't.User_ID ='.$user;
+            $model = Reservation::model()->findAll($criteria);
+            
+            $count = count($model);
+            $date = date("Y-m-d G:i:s");
+            $user = Yii::app()->user->employee;
+
+                // Export it
+            $this->toExcel($model,
+                array(                    
+                    array(
+                            'name' => 'Reservation_ID',
+                            'header' => 'Reservation ID',
+                            'footer'=>'Total reservations of '.$user.' : '.$count, 
+                    ),
+                    'user.Username',                    
+                    array(
+                            'name' => 'route.Route_Description',
+                            'header' => 'Route Description',
+                            'footer'=>'Downloaded date : '.$date, 
+                    ),
+                    'time.Time',                    
+                    array(
+                            'name' => 'reason.Reason_Description',
+                            'header' => 'Reason Description',
+                            'footer'=>'Downloaded by : '.$user, 
+                    ),
+                    'Nearest_City',
+                    'Added_Date',
+                    'user.employee.Employee_Name',
+                    'user.employee.Phone_Number',
+                    'user.project.Project_Name'
+                ),
+                'User_Reservations',
+                array(
+                    'creator' => 'VmiT',
+                ),
+                'Excel5'
+            );
+        }
         
 	/**
 	 * Displays a particular model.

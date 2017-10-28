@@ -279,7 +279,14 @@ $('.ad-search-form form').change(function(){
                 )
             ),
 	),
-)); ?> 
+)); 
+
+
+
+echo CHtml::link('<i class="fa fa-download" aria-hidden="true"></i> &nbsp; Download XLS',array('reservation/CurrentRes')); 
+?> 
+
+
 
 
 

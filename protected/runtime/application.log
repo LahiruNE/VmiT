@@ -7266,3 +7266,56 @@ in /var/www/html/VmiT/index.php (13)
 2017/10/01 13:18:16 [warning] [application] Failed to set unsafe attribute "Proj" of "Reservation".
 in /var/www/html/VmiT/protected/controllers/ReservationController.php (159)
 in /var/www/html/VmiT/index.php (13)
+2017/10/20 22:11:09 [error] [php] Trying to get property of non-object (/var/www/html/VmiT/protected/commands/MailCommand.php:41)
+Stack trace:
+#0 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#1 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:12:45 [error] [php] Trying to get property of non-object (/var/www/html/VmiT/protected/commands/MailCommand.php:41)
+Stack trace:
+#0 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#1 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:13:20 [error] [php] Trying to get property of non-object (/var/www/html/VmiT/protected/commands/MailCommand.php:41)
+Stack trace:
+#0 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#1 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:13:33 [error] [exception.ParseError] ParseError: syntax error, unexpected '}' in /var/www/html/VmiT/protected/commands/MailCommand.php:42
+Stack trace:
+#0 /var/www/html/VmiT/framework/console/CConsoleCommandRunner.php(67): CConsoleCommandRunner->createCommand('mail')
+#1 /var/www/html/VmiT/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#2 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#3 /var/www/html/VmiT/yiicmd.php(11): CApplication->run()
+#4 {main}
+---
+2017/10/20 22:17:17 [error] [exception.Error] Error: Call to undefined function split() in /var/www/html/VmiT/protected/commands/MailCommand.php:24
+Stack trace:
+#0 /var/www/html/VmiT/framework/console/CConsoleCommandRunner.php(71): MailCommand->run(Array)
+#1 /var/www/html/VmiT/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#2 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#3 /var/www/html/VmiT/yiicmd.php(11): CApplication->run()
+#4 {main}
+---
+2017/10/20 22:24:24 [error] [php] Undefined variable: value (/var/www/html/VmiT/protected/commands/MailCommand.php:24)
+Stack trace:
+#0 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#1 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:24:47 [error] [php] A non well formed numeric value encountered (/var/www/html/VmiT/protected/commands/MailCommand.php:40)
+Stack trace:
+#0 /var/www/html/VmiT/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#2 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:25:13 [error] [php] A non well formed numeric value encountered (/var/www/html/VmiT/protected/commands/MailCommand.php:40)
+Stack trace:
+#0 /var/www/html/VmiT/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#2 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+
+2017/10/20 22:25:55 [error] [php] Array to string conversion (/var/www/html/VmiT/protected/commands/MailCommand.php:41)
+Stack trace:
+#0 /var/www/html/VmiT/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#1 /var/www/html/VmiT/yiicmd.php(11): CConsoleApplication->run()
+

@@ -83,7 +83,7 @@ class Reservation extends CActiveRecord
     public function attributeLabels()
     {
             return array(
-                'Reservation_ID' => 'Reservation',
+                'Reservation_ID' => 'Reservation ID',
                 'User_ID' => 'User',
                 'Route_ID' => 'Route',
                 'Time_ID' => 'Time',

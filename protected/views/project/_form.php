@@ -34,7 +34,7 @@
 		<?php echo $form->textField($model,'Project_Name'); ?>
 		<?php echo $form->error($model,'Project_Name'); ?>
 	</div>
-        <div class="row">
+        <div class="row"><div>
 		<?php echo $form->labelEx($model,'Status'); ?>
                 <?php
                 $this->widget('ext.select2.ESelect2', array(
@@ -49,8 +49,8 @@
                     'options' => array(
                         'containerCssClass' => 'mainDrops',
                     ),
-                )); ?>   
-		<?php echo $form->error($model,'Status'); ?>
+                    )); ?> </div>  
+            <div style="position: absolute; margin-left: 350px; margin-top: -35px"><?php echo $form->error($model,'Status'); ?></div>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'Start_Date'); ?>
