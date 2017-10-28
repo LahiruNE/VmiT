@@ -17,6 +17,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+            array('name'=>'Employee ID', 'value'=> $model->employee->Employee_ID),
             array('name'=>'Employee_ID', 'value'=> $model->employee->Employee_Name),
             'Username',
             'Password',

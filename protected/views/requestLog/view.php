@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label'=>'Manage RequestLog', 'url'=>array('admin')),
+    array('label'=>'Manage Request Logs', 'url'=>array('admin')),
 );
 ?>
 
@@ -17,12 +17,13 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'Request_Log_ID',
-		'Employee_ID',
-		'Username',
-		'User_Role_ID',
-		'Project_ID',
-		'Status',
-		'Remark',
+            'Request_Log_ID',
+            array('name' => 'Employee ID', 'value' => $model->Employee_ID),
+            array('name' => 'Employee_ID', 'value' => $model->employee->Employee_Name),
+            'Username',
+            array('name' => 'User_Role_ID', 'value' => $model->userRole->User_Role_Name),
+            array('name' => 'Project_ID', 'value' => $model->project->Project_Name),
+            array('name'=> 'Status', 'value'=> $model->Status = 1 ? "Approved" : "Denied"),
+            'Remark',
 	),
 )); ?>

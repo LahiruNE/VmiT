@@ -1,9 +1,4 @@
 <script>
-    function test()
-    {
-        alert("test karanna hutto");
-    }
-    
     function ProjDelete()
     {
         swal({
@@ -54,10 +49,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Projects', 'url'=>array('index')),
 	array('label'=>'Add Projects', 'url'=>array('create')),
 	array('label'=>'Update Project', 'url'=>array('update', 'id'=>$model->Project_ID)),
-	array('label'=>'Delete Project', 'url'=>'', 'linkOptions'=>array('id'=>'delete', 'onclick'=>'test()')),
 	array('label'=>'Manage Projects', 'url'=>array('admin')),
 );
 ?>

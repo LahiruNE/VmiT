@@ -49,7 +49,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Schedules', 'url'=>array('index')),
 	array('label'=>'Add Schedules', 'url'=>array('create')),
 );
 

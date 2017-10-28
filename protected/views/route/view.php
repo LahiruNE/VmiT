@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Routes', 'url'=>array('index')),
 	array('label'=>'Add Routes', 'url'=>array('create')),
 	array('label'=>'Update Route', 'url'=>array('update', 'id'=>$model->Route_ID)),
-	array('label'=>'Delete Route', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->Route_ID),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Routes', 'url'=>array('admin')),
 );
 ?>

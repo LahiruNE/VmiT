@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Schedules', 'url'=>array('index')),
 	array('label'=>'Add Schedules', 'url'=>array('create')),
 	array('label'=>'Update Schedule', 'url'=>array('update', 'id'=>$model->Time_ID)),
-	array('label'=>'Delete Schedule', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->Time_ID),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Schedules', 'url'=>array('admin')),
 );
 ?>

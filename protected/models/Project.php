@@ -96,6 +96,42 @@ class Project extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function searchCurrent()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('Project_ID',$this->Project_ID);
+		$criteria->compare('Project_Name',$this->Project_Name,true);
+		$criteria->compare('Start_Date',$this->Start_Date,true);
+		$criteria->compare('End_Date',$this->End_Date,true);
+		$criteria->compare('Status',$this->Status);
+                $criteria->compare('Status',0);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+        
+        public function searchCompleted()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+                
+		$criteria->compare('Project_ID',$this->Project_ID);
+		$criteria->compare('Project_Name',$this->Project_Name,true);
+		$criteria->compare('Start_Date',$this->Start_Date,true);
+		$criteria->compare('End_Date',$this->End_Date,true);
+		$criteria->compare('Status',$this->Status);
+                $criteria->compare('Status',1);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.

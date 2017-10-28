@@ -81,6 +81,7 @@ $('.ad-search-form form').change(function(){
 	//'filter'=>$model,
 	'columns'=>array(
             array('name'=>'User_ID', 'value'=>'$data->User_ID', 'htmlOptions'=>array('style'=>'display: none'), 'headerHtmlOptions'=>array('style'=>'display: none')),
+            array('name'=>'Employee ID', 'value'=>'$data->employee->Employee_ID'),
             array('name'=>'Employee_ID', 'value'=>'$data->employee->Employee_Name'),
             'Username',
             array('name'=>'User_Role_ID', 'value'=>'$data->userRole->User_Role_Name'),

@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Reasons', 'url'=>array('index')),
 	array('label'=>'Add Reasons', 'url'=>array('create')),
 	array('label'=>'Update Reason', 'url'=>array('update', 'id'=>$model->Reason)),
-	array('label'=>'Delete Reason', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->Reason),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Reasons', 'url'=>array('admin')),
 );
 ?>

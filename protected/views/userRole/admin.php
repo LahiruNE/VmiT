@@ -49,7 +49,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List User Roles', 'url'=>array('index')),
 	array('label'=>'Add User Roles', 'url'=>array('create')),
 );
 

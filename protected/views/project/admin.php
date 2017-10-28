@@ -50,7 +50,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Projects', 'url'=>array('index')),
 	array('label'=>'Add Projects', 'url'=>array('create')),
 );
 

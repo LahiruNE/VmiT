@@ -49,7 +49,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Employees', 'url'=>array('index')),
 	array('label'=>'Create Employees', 'url'=>array('create')),
 );
 

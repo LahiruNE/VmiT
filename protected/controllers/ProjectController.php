@@ -31,6 +31,12 @@ class ProjectController extends Controller
                         'actions'=>array('index','view','create','update','admin','delete','AjaxDelete'),
                         'roles'=>array(Yii::app()->params['sharedService']),
                 ),
+                
+                array('allow',  // allow all users to perform 'index' and 'view' actions
+                        'actions'=>array('CurrentProjects','CompletedProjects'),
+                        'users'=>array('*'),
+                ),
+                
                 array('deny',  // deny all users
                         'users'=>array('*'),
                 ),
@@ -137,6 +143,22 @@ class ProjectController extends Controller
                 
             }  
 	}
+        
+        public function actionCurrentProjects()
+        {
+            $model=new Project('search');
+            $this->render('current', array(
+                'model' => $model,
+            ));
+        }
+        
+        public function actionCompletedProjects()
+        {
+            $model=new Project('search');
+            $this->render('completed', array(
+                'model' => $model,
+            ));
+        }
 
 	/**
 	 * Lists all models.

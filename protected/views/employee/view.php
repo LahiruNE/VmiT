@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Employees', 'url'=>array('index')),
 	array('label'=>'Add Employees', 'url'=>array('create')),
 	array('label'=>'Update Employee', 'url'=>array('update', 'id'=>$model->Employee_ID)),
-	array('label'=>'Delete Employee', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->Employee_ID),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Employees', 'url'=>array('admin')),
 );
 ?>

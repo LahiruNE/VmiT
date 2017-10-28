@@ -61,9 +61,9 @@
                 <h2>Our Projects</h2>
                 <p class="lead">View our ongoing and recently completed projects.</p>
             </div>
-               <center>
-                   <div  style="position:relative;">
-                <div class="col-sm-6 col-md-4">
+            <center>
+            <div  style="position:relative;">
+                <a href="<?php echo Yii::app()->getBaseUrl()?>/index.php?r=project/CurrentProjects"><div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown" style="width:320px !important; height:170px !important; margin-left: 200px">
                         <div class="pull-left">
                             <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/services/services5.png">
@@ -73,9 +73,9 @@
                             <p>View details</p>
                         </div>
                     </div>
-                </div>
+                </div></a>
 
-                <div class="col-sm-6 col-md-4">
+                <a href="<?php echo Yii::app()->getBaseUrl()?>/index.php?r=project/CompletedProjects"><div class="col-sm-6 col-md-4">
                     <div class="media services-wrap wow fadeInDown" style="width:320px !important; height:170px !important; margin-left: 200px">
                         <div class="pull-left">
                             <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/services/services2.png">
@@ -85,7 +85,7 @@
                             <p>View details</p>
                         </div>
                     </div>
-                </div>   
+                </div></a>
                 
             </div><!--/.row--></center>
         </div><!--/.container-->

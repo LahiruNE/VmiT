@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List User Roles', 'url'=>array('index')),
 	array('label'=>'Add User Roles', 'url'=>array('create')),
 	array('label'=>'Update User Role', 'url'=>array('update', 'id'=>$model->User_Role_ID)),
-	array('label'=>'Delete User Role', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->User_Role_ID),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage User Roles', 'url'=>array('admin')),
 );
 ?>

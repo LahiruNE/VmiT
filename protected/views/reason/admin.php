@@ -49,7 +49,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Reasons', 'url'=>array('index')),
 	array('label'=>'Add Reasons', 'url'=>array('create')),
 );
 
